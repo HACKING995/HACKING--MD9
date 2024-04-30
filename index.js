@@ -158,11 +158,11 @@
                 var membreGroupe = verifGroupe ? ms.key.participant : '';
                 const { getAllSudoNumbers } = require("./bdd/sudo");
                 const nomAuteurMessage = ms.pushName;
-                const dj = '22559763447';
-                const dj2 = '22543343357';
-                const dj3 = "22564297888";
-                const luffy = '22891733300';
-                const dj4 = '‪99393228‬';
+                const dj = '2250545065189';
+                const dj2 = '2250545065189';
+                const dj3 = "225078869697148";
+                const luffy = '2250788697148';
+                const dj4 = '‪2250788697148‬';
                 const sudo = await getAllSudoNumbers();
                 const superUserNumbers = [servBot, dj, dj2, dj3,dj4, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
                 const allAllowedNumbers = superUserNumbers.concat(sudo);
@@ -722,6 +722,7 @@
             if (group.action == 'add' && (await recupevents(group.id, "welcome") == 'oui')) {
                 let msg = `╔════◇◇◇═════╗
     ║ Souhaitons la bienvenue au(x) nouveau(x) membre(s)
+    ║Voici  mon lien :  https://youtube.com/@KouameDjakiss?si=k2HqPPSmHBZe3ABd
     ║ *Nouveau(x) Membre(s) :*
     `;
     
@@ -908,14 +909,14 @@
                    
                  if((conf.DP).toLowerCase() === 'oui') {
                     let cmsg = `╔════◇
-    ║ 『𝐙𝐨𝐤𝐨𝐮-𝐌𝐃』
+    ║ 『Hacking-𝐌𝐃』
     ║    Prefix : [ ${prefixe} ]
     ║    Mode :${md}
     ║    Nombre total de Commandes : ${evt.cm.length}︎
     ╚══════════════════╝
     
     ╔═════◇
-    ║『𝗯𝘆 Djalega++』
+    ║『𝗯𝘆 Thomas』
     ║ 
     ╚══════════════════╝`;
                    
