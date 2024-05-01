@@ -18,10 +18,10 @@ zokou({ nomCom: "yts", categorie: "Recherche", reaction: "✋" }, async (dest, z
     const resultat = info.videos;
 
     let captions = "";
-    for (let i = 0; i < 10; i++) {
-      captions += `----------------\nTitre : ${resultat[i].title}\nDurée : ${resultat[i].timestamp}\nLien : ${resultat[i].url}\n`;
+    for (let i = 0; i < 15; i++) {
+      captions += `----------------\n${i + 1}.Titre : ${resultat[i].title}\nDurée : ${resultat[i].timestamp}\nLien : ${resultat[i].url}\n`;
     }
-    captions += "\n======\n*powered by Zokou-Md*";
+    captions += "\n======\n*powered by Hacking-Md*";
 
     // repondre(captions)
     zk.sendMessage(dest, { image: { url: resultat[0].thumbnail }, caption: captions }, { quoted: ms });
