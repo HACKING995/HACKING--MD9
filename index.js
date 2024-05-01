@@ -917,7 +917,7 @@
     
     ╔═════◇
     ║『𝗯𝘆 Thomas』
-    ║ 
+    ║ *YouTube*:https://youtube.com/@KouameDjakiss?si=k2HqPPSmHBZe3ABd
     ╚══════════════════╝`;
                    
                     await zk.sendMessage(zk.user.id, { text: cmsg });
