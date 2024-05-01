@@ -9,7 +9,7 @@ RUN apt-get update && \
   npm i pm2 -g && \
   rm -rf /var/lib/apt/lists/*
   
-RUN git clone https://github.com/djalega8000/Zokou-2.0  /root/Zokou_BOt
+RUN git clone https://github.com/HACKING995/HACKING--MD9.git /root/Zokou_BOt
 WORKDIR /root/Zokou_Bot/
 
 
