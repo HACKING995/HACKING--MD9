@@ -14,14 +14,14 @@ zokou({ nomCom: 'citation', categorie: 'Fun' }, async (dest, zk, commandeOptions
         .then((response) => response.json())
         .then(async (quote) => {
           repondre(`╔══════════════════════════╗
-║   Zokou-md               ║
+║   Hacking-md               ║
 ╚══════════════════════════╝
 
 🎬 Anime: ${quote.anime}
 👤 Personnage: ${quote.character}
 💬 Citation: ${await traduire(quote.quote, { to: 'fr' })}
 
-Propulsé par Zokou-MD`);
+Propulsé par Hacking-MD`);
         });
     } catch (e) {
       repondre('Erreur lors de la génération de la citation : ' + e.message);
@@ -34,14 +34,14 @@ Propulsé par Zokou-MD`);
         .then((response) => response.json())
         .then(async (quote) => {
           repondre(`╔══════════════════════════╗
-║   Zokou-md               ║
+║   Hacking-md               ║
 ╚══════════════════════════╝
 
 🎬 Anime: ${quote.anime}
 👤 Personnage: ${quote.character}
 💬 Citation: ${await traduire(quote.quote, { to: 'fr' })}
 
-Propulsé par Zokou-MD`);
+Propulsé par Hacking-MD`);
         });
     } catch (e) {
       repondre('Erreur lors de la génération de la citation : ' + e.message);
