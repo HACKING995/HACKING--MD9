@@ -135,7 +135,7 @@ zokou( {
     
     
          let msg = `
-┏━━━┛ ZK-Rang ┗━━━┓
+┏━━━┛ HG-Rang ┗━━━┓
          
     *Nom :* @${auteurMsgRepondu.split("@")[0]}
     
@@ -186,7 +186,7 @@ zokou( {
          let role ;
     
          if (data.level < 5) {
-            role = 'Nouveau né(e)'
+            role = 'Puff tu est nouveau né(e)'
          } else if (data.level >= 5 || data.level < 10) {
             role = 'aspirant(e)-Ninja'
          } else if ( data.level >= 10 && data.level < 15 ) {
@@ -211,7 +211,7 @@ zokou( {
     
     
          let msg = `
-┏━━━┛ ZK-Rang ┗━━━┓
+┏━━━┛ HG-Rang ┗━━━┓
      
   *Nom :* ${nomAuteurMessage}
 
@@ -252,7 +252,7 @@ zokou( {
     const {ms , arg, repondre,auteurMessage,nomAuteurMessage, msgRepondu , auteurMsgRepondu , mybotpic} = commandeOptions ;
 
 
-       let msg = `┏━━┛ ZK-top-rang ┗━━┓\n\n`
+       let msg = `┏━━┛ HG-top-rang ┗━━┓\n\n`
        
       let topRanks = await getBottom10Users() ;
         let mention = [] ;
