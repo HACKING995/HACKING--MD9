@@ -8,7 +8,7 @@ const yts1 = require("youtube-yts");
 //var fs =require("fs-extra")
 
 zokou({
-  nomCom: "song",
+  nomCom: "play",
   categorie: "Recherche",
   reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
@@ -35,7 +35,12 @@ zokou({
 
 *Lien :* _${videos[0].url}_
 
+*Uploaded:* ${videos[0].ago}
 
+*Author:* ${videos[0].author.name}
+*Choose format:*
+1. MP3
+2. MP4
 _*En cours de téléchargement...*_\n\n`
        }
 
@@ -155,7 +160,7 @@ _*En cours de téléchargement...*_\n\n`
 
       fileStream.on('finish', () => {
         // Envoi du fichier vidéo en utilisant l'URL du fichier local
-        zk.sendMessage(origineMessage, { video: { url :"./video.mp4"} , caption: "*Zokou-Md", gifPlayback: false }, { quoted: ms });
+        zk.sendMessage(origineMessage, { video: { url :"./video.mp4"} , caption: "*Hacking-Md", gifPlayback: false }, { quoted: ms });
       });
 
       fileStream.on('error', (error) => {
