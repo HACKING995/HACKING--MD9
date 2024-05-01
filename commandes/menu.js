@@ -66,7 +66,7 @@ let menuMsg = `
 *»»————— ★ —————««*
 Pour utiliser  une  commande, tapez  ${prefixe}"nom de la commande"
  
-```powered by Hacking-md``` 
+powered by Hacking-md
      **YouTube**: https://youtube.com/@KouameDjakiss?si=k2HqPPSmHBZe3ABd                                         
 *»»————— ★ —————««*
 `;
@@ -76,7 +76,7 @@ Pour utiliser  une  commande, tapez  ${prefixe}"nom de la commande"
 
    if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Zokou-MD*, développé par Djalega++" , gifPlayback : true}, { quoted: ms });
+        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Hacking-MD*, développé par Thomas" , gifPlayback : true}, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
@@ -86,7 +86,7 @@ Pour utiliser  une  commande, tapez  ${prefixe}"nom de la commande"
 // Vérification pour .jpeg ou .png
 else if (lien.match(/\.(jpeg|png|jpg)$/i)) {
     try {
-        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Zokou-MD*, développé par Djalega++" }, { quoted: ms });
+        zk.sendMessage(dest, { image: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Hacking-MD*, développé par Thomas" }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
