@@ -8,7 +8,7 @@ zokou({ nomCom: "proprio", categorie: "Général", reaction: "💞" }, async (de
   const thsudo = await isSudoTableNotEmpty()
 
   if (thsudo) {
-     let msg = `*Zokou Super-User*\n
+     let msg = `*HACKING Super-User*\n
      *Numero proprietaire\n* :
 - 🌟 @${conf.NUMERO_OWNER}
 
@@ -51,16 +51,16 @@ zokou({ nomCom: "proprio", categorie: "Général", reaction: "💞" }, async (de
   }
 });
 
-zokou({ nomCom: "dev", categorie: "Général", reaction: "💞" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "developpeur", categorie: "Général", reaction: "💞" }, async (dest, zk, commandeOptions) => {
     const { ms, mybotpic } = commandeOptions;
 
     const devs = [
-      { nom: "Djalega++", numero: "22559763447" },
-      { nom: "᚛M๏𝓷keℽ D Lบffy᚜", numero: "22891733300" },
+      { nom: "Thomas", numero: "2250545065189" },
+      { nom: "᚛MD-HACKER᚜", numero: "2250788697148" },
       // Ajoute d'autres développeurs ici avec leur nom et numéro
     ];
 
-    let message = "👋 Bienvenue chez Zokou ! Voici les développeurs :\n\n";
+    let message = "👋 Bienvenue chez HACKING-MD ! Voici les développeurs :\n\n";
     for (const dev of devs) {
       message += `----------------\n• ${dev.nom} : https://wa.me/${dev.numero}\n`;
     }
@@ -95,7 +95,7 @@ zokou({ nomCom: "support", categorie: "Général" }, async (dest, zk, commandeOp
   const { ms, repondre, auteurMessage, } = commandeOptions; 
  
   repondre("Veillez voir la discussion privé pour le lien svp ")
-  await zk.sendMessage(auteurMessage,{text : `https://chat.whatsapp.com/H6oeuhfSMtV1Orjmf2NVnl`},{quoted :ms})
+  await zk.sendMessage(auteurMessage,{text : `hhttps://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ`},{quoted :ms})
 
 })
 
