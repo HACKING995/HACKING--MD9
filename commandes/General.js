@@ -95,7 +95,28 @@ zokou({ nomCom: "support", categorie: "Général" }, async (dest, zk, commandeOp
   const { ms, repondre, auteurMessage, } = commandeOptions; 
  
   repondre("Veillez voir la discussion privé pour le lien svp ")
-  await zk.sendMessage(auteurMessage,{text : `hhttps://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ`},{quoted :ms})
+  await zk.sendMessage(auteurMessage,{text : `https://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ`},{quoted :ms})
 
 })
 
+zokou({ nomCom: "repo", categorie: "Général" }, async (dest, zk, commandeOptions) => {
+  const { ms, repondre, auteurMessage } = commandeOptions;
+
+  if (commandeOptions.nomCom === "repo") {
+    repondre("Veillez voir la discussion privée pour le lien, s'il vous plaît.");
+    await zk.sendMessage(auteurMessage, { text: `https://github.com/HACKING995/HACKING-MD955/blob/main/README.md` }, { quoted: ms });
+  }
+});
+
+zokou({ nomCom: "channel", categorie: "Général" }, async (dest, zk, commandeOptions) => {
+  const { ms, repondre, auteurMessage } = commandeOptions;
+
+  if (commandeOptions.nomCom === "channel") {
+    const channel = "nom_du_canal"; // Remplacez par le nom du canal où vous souhaitez envoyer le message
+    const message = "Veillez voir la discussion privée pour le lien, s'il vous plaît.";
+
+    await zk.sendMessage(channel, { text: message });
+    repondre("Le message a été envoyé dans le canal spécifié.");
+    await zk.sendMessage(auteurMessage, { text: `https://whatsapp.com/channel/0029VaYrk3lIiRozw8zeoh00` }, { quoted: ms });
+  }
+});
