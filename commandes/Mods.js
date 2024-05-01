@@ -72,7 +72,7 @@ zokou({ nomCom: "tgs", categorie: "Mods" }, async (dest, zk, commandeOptions) =>
 
         const sticker = new Sticker(buffer.data, {
           pack: nomAuteurMessage,
-          author: "Zokou-md",
+          author: "Hacking-md",
           type: StickerTypes.FULL,
           categories: ['🤩', '🎉'],
           id: '12345',
@@ -214,7 +214,7 @@ zokou({ nomCom: "jid", categorie: "Mods" }, async (dest, zk, commandeOptions) =>
           let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage)
   
           let stickerMess = new Sticker(media, {
-            pack: 'Zokou-tag',
+            pack: 'Hacking-tag',
             type: StickerTypes.CROPPED,
             categories: ["🤩", "🎉"],
             id: "12345",
