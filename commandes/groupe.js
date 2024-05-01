@@ -27,7 +27,7 @@ zokou({ nomCom: "appel", categorie: "Groupe", reaction: "📣" }, async (dest, z
   let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
   var tag = ""; 
   tag += `========================\n  
-        🌟 *Zokou-Md* 🌟
+        📞 *Hacking-Md* 📞
 ========================\n
 👥 Groupe : ${nomGroupe} 🚀 
 👤 Auteur : *${nomAuteurMessage}* 👋 
@@ -255,7 +255,7 @@ zokou({ nomCom: "retirer", categorie: "Groupe", reaction: "👨🏿‍💼" }, a
             if (admin == false) {
               const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/remover.gif"
               var sticker = new Sticker(gifLink, {
-                pack: 'Zokou-Md', // The pack name
+                pack: 'Hacking-Md', // The pack name
                 author: nomAuteurMessage, // The author name
                 type: StickerTypes.FULL, // The sticker type
                 categories: ['🤩', '🎉'], // The sticker category
@@ -526,7 +526,7 @@ zokou({ nomCom: "groupe", categorie: "Groupe" }, async (dest, zk, commandeOption
       await zk.groupSettingUpdate(dest, 'announcement');
       repondre('Groupe fermer avec succes');
       break;
-    default: repondre("N'inventez pas d'option svp")
+    default: repondre("N'inventez pas d'option idiot svp")
   }
     
   } else {repondre('Vous avez pas droit a cette commande')}
@@ -772,7 +772,7 @@ zokou({nomCom:"annonce",categorie:"Groupe",reaction:"🎤"},async(dest,zk,comman
         let media  = await zk.downloadAndSaveMediaMessage(msgRepondu.stickerMessage)
 
         let stickerMess = new Sticker(media, {
-          pack: 'Zokou-tag',
+          pack: 'Hacking-tag',
           type: StickerTypes.CROPPED,
           categories: ["🤩", "🎉"],
           id: "12345",
@@ -836,7 +836,7 @@ zokou({ nomCom: "apk", reaction: "✨", categorie: "Recherche" }, async (dest, z
 
     const downloadLink = appData.dllink;
     const captionText =
-      "『 *Zokou-Md App* 』\n\n*Nom :* " + appData.name +
+      "『 *Hacking-Md App* 』\n\n*Nom :* " + appData.name +
       "\n*Id :* " + appData["package"] +
       "\n*Dernière MAJ :* " + appData.lastup +
       "\n*Taille :* " + appData.size +
