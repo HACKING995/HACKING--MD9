@@ -32,20 +32,20 @@ const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
 ╭────✧${s.BOT}✧────◆
-│   *Préfixe* : ${s.PREFIXE}
-│   *Owner* : ${s.NOM_OWNER}
-│   *Mode* : ${mode}
-│   *Commandes* : ${cm.length}
-│   *Date* : ${date}
-│   *Heure* : ${temps}
-│   *Mémoire* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-│   *Plateforme* : ${os.platform()}
-│   *Développeurs* : Djalega++ 
-│  & M๏𝓷keℽ D Lบffy
+│   _Préfixe_ : ${s.PREFIXE}
+│   _Owner_ : ${s.NOM_OWNER}
+│   _Mode_ : ${mode}
+│   _Commandes_ : ${cm.length}
+│   _Date_ : ${date}
+│   _Heure_ : ${temps}
+│   _Mémoire_ : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+│   _Plateforme_ : ${os.platform()}
+│   _Développeurs_ : Thomas 
+│  & MD-HACKER 
 ╰─────✧WA-BOT✧─────◆ \n\n`;
     
 let menuMsg = `
-👋 salut ${nomAuteurMessage} 👋
+👋 salut comment  allez ${nomAuteurMessage} 👋
 
 *Voici la liste de mes commandes :*
 ◇                             ◇
@@ -55,7 +55,7 @@ let menuMsg = `
         menuMsg += `╭────❏ *${cat}* ❏`;
         for (const cmd of coms[cat]) {
             menuMsg += `
-│ ${cmd}`;
+│🌏│ **${cmd}**;
         }
         menuMsg += `
 ╰═════════════⊷ \n`
@@ -66,8 +66,8 @@ let menuMsg = `
 *»»————— ★ —————««*
 Pour utiliser  une  commande, tapez  ${prefixe}"nom de la commande"
  
- powered by zokou-md
-                                                
+```powered by Hacking-md``` 
+     **YouTube**: https://youtube.com/@KouameDjakiss?si=k2HqPPSmHBZe3ABd                                         
 *»»————— ★ —————««*
 `;
 
