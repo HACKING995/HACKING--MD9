@@ -55,7 +55,7 @@ let menuMsg = `
         menuMsg += `╭────❏ *${cat}* ❏`;
         for (const cmd of coms[cat]) {
             menuMsg += `
-| ■│ ${cmd}';
+| ■│ _${cmd}_`;
         }
         menuMsg += `
 ╰═════════════⊷ \n`
