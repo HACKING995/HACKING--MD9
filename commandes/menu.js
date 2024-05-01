@@ -47,7 +47,7 @@ const date = moment().format('DD/MM/YYYY');
 let menuMsg = `
 👋 salut comment  allez ${nomAuteurMessage} 👋
 
-*Voici la liste de mes commandes :*
+*Voici la liste de mes commandes HACKING :*
 ◇                             ◇
 `;
 
@@ -55,7 +55,7 @@ let menuMsg = `
         menuMsg += `╭────❏ *${cat}* ❏`;
         for (const cmd of coms[cat]) {
             menuMsg += `
-│🌏│ ${cmd}';
+| ■│ ${cmd}';
         }
         menuMsg += `
 ╰═════════════⊷ \n`
