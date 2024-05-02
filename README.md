@@ -52,7 +52,7 @@ Les contributions à HACKING sont les bienvenues ! Si vous avez des idées pour 
                 
 ## Licence
 
-Le Bot WhatsApp Zokou est publié sous la [Licence MIT](https://opensource.org/licenses/MIT).
+Le Bot WhatsApp HACKING est publié sous la [Licence MIT](https://opensource.org/licenses/MIT).
 
 Profitez des fonctionnalités variées du Bot WhatsApp Zokou pour améliorer vos conversations et rendre votre expérience WhatsApp plus intéressante !
 
