@@ -99,15 +99,6 @@ zokou({ nomCom: "support", categorie: "Général" }, async (dest, zk, commandeOp
 
 })
 
-zokou({ nomCom: "repo", categorie: "Général" }, async (dest, zk, commandeOptions) => {
-  const { ms, repondre, auteurMessage } = commandeOptions;
-
-  if (commandeOptions.nomCom === "repo") {
-    repondre("Veillez voir la discussion privée pour le lien, s'il vous plaît.");
-    await zk.sendMessage(auteurMessage, { text: `https://github.com/HACKING995/HACKING-MD955/blob/main/README.md` }, { quoted: ms });
-  }
-});
-
 zokou({ nomCom: "channel", categorie: "Général" }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, auteurMessage } = commandeOptions;
 
