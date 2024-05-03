@@ -29,9 +29,9 @@ voici *Hacking-MD.*\n tu peux DEPLOYER *REPO*
 🧧 *FORKS:* ${repoInfo.forks}
 📅 *RELEASE DATE:* ${releaseDate}
 🕐 *UPDATE ON:* ${repoInfo.lastUpdate}
-👨‍💻 *OWNER:* *France King*
+👨‍💻 *OWNER:* *Thomas*
 __________________________________
-            *Made With* 🤍`;
+            *Made With* Thomas`;
 
       await zk.sendMessage(dest, { image: { url: img }, caption: gitdata });
     } else {
