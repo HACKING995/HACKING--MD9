@@ -96,3 +96,19 @@ zokou({ nomCom: "gpt", reaction: "📡", categorie: "IA" }, async (dest, zk, com
     repondre("Oups, une erreur est survenue lors du traitement de votre demande.");
   }
 });
+
+zokou({ nomCom: "thomas", reaction: "🌏", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  const { repondre, arg, ms } = commandeOptions;
+
+  if (!arg || arg.length === 0) {
+    return repondre(`Veuillez poser une question.`);
+  }
+
+  // Regrouper les arguments en une seule chaîne séparée par "-"
+  const question = arg.join(' ');
+  const response = await fetch(`https://api.maher-zubair.tech/ai/chatgptv4?q=${question}`);
+  const data = await response.json();
+
+  await repondre(data.result);
+  console.log(data.completion);
+});
