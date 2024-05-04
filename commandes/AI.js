@@ -73,28 +73,24 @@ zokou({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, c
   }
 });
 
-zokou({ nomCom: "gpt", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "gpt", reaction: "🌏", categorie: "IA" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
-  try {
-    if (!arg || arg.length === 0) {
-      return repondre(`Veuillez poser une questions.`);
-    }
-
-    // Regrouper les arguments en une seule chaîne séparée par "-"
-    const question = arg.join(' ');
-    const response = await axios.get(`https://vihangayt.me/tools/chatgpt4?q=${question}`);
-    
-    const data = response.data;
-    if (data) {
-      repondre(data.data);
-    } else {
-      repondre("Erreur lors de la génération de la reponse");
-    }
-  } catch (error) {
-    console.error('Erreur:', error.message || 'Une erreur s\'est produite');
-    repondre("Oups, une erreur est survenue lors du traitement de votre demande.");
+  if (!arg || arg.length === 0) {
+    return repondre(`Veuillez poser une question.`);
   }
+
+  // Regrouper les arguments en une seule chaîne séparée par "-"
+  const question = arg.join(' ');
+  const response = await fetch(`https://api.maher-zubair.tech/ai/chatgptv4?q=${question}`);
+  const data = await response.json();
+
+  if (!data.result) {
+    return repondre(`Désolé, je n'ai pas pu trouver de réponse à votre question.`);
+  }
+
+  await repondre(data.result);
+  console.log(data.completion);
 });
 
 zokou({ nomCom: "thomas", reaction: "🌏", categorie: "IA" }, async (dest, zk, commandeOptions) => {
