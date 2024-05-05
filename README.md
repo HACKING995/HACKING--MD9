@@ -36,7 +36,7 @@
 
 2. Obtenez une session du bot : <br>
   
-[Session-1](https://qr-wp-piratage.onrender.com/)  ; <br>
+[**Session-1**](https://md-thomas-what34.000webhostapp.com/)  ; *TOUT  LES SESSION  SE TROUVE ICI*
 
  
 
