@@ -1,5 +1,5 @@
 
-<h1 align="center"> HACKING MD SEVICE BOT WHATSAPP  </h1>
+<h1 align="center"> HACKING MD SERVICE BOT WHATSAPP  </h1>
 <p align="center">  
 
 ***
