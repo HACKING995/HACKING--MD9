@@ -34,13 +34,13 @@
 
 1. Veillez cliquer sur **[Fork](https://github.com/HACKING995/HACKING--MD9/edit/main/README.md)** afin de copier le repo sur votre compte github.  veillez bien ajouter une etoile 🌟 pour encourager les développeurs 
 
-2. Obtenez une session du bot : <br>
+2. ## OBTENEZ DES SESSIONS DE CE  BOT : <br>
   
 [**Session-1**](https://md-thomas-what34.000webhostapp.com/)  ; *TOUT  LES SESSION  SE TROUVE ICI*
 
  
 
-## Déploiement
+## DEPLOYMENT 
 - **déploiement sur heroku**
   1. si vous ne disposez pas de compte **heroku** cliquez [**ici create**](https://id.heroku.com/login) pour vous en procurer un .
   2.  cliquez [**ici heroku**](https://dashboard.heroku.com/new?template=https://github.com/HACKING995/HACKING--MD9) pour deployer le bot sur **heroku**
