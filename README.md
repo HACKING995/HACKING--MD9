@@ -11,24 +11,28 @@
 <p align="center">
 
 
- HACKING est un bot multi-devices conçu pour enrichir vos conversations WhatsApp avec des fonctionnalités utiles et amusantes. Qu'il s'agisse de gérer des fichiers, d'interagir avec des stickers ou de faciliter la gestion de groupe, HACKING est là pour vous aider.
+ ## HACKING-MD : le robot multi-appareils qui révolutionne vos conversations WhatsApp
 
-## Fonctionnalités Principales
+**Imaginez un assistant personnel qui vous accompagne dans toutes vos conversations WhatsApp.** Un assistant capable de gérer vos fichiers, d'interagir avec des autocollants et de faciliter la gestion de vos groupes. Cet assistant, c'est HACKING-MD.
 
-- **Téléchargement de Fichiers :** HACKING peut télécharger des fichiers audio et vidéo à partir de liens que vous lui envoyez, pour que vous puissiez les partager facilement avec vos contacts.
+**HACKING-MD est bien plus qu'un simple robot.** C'est un véritable compagnon qui vous fera gagner du temps et vous simplifiera la vie. Voici quelques exemples de ce qu'il peut faire pour vous :
 
-- **Exportation de Stickers :** Vous pouvez exporter des stickers de Telegram et les utiliser dans vos conversations WhatsApp en les envoyant simplement à HACKING.Vous avez donc besoins de l'api key de chez api.lolhuman.xyz ; un api  key vous est offert au cas ou vous y arrivez pas : ```9d05ccc5f58e1cf30937```
+* **Gérer vos fichiers :** Envoyez et recevez des fichiers de toutes sortes, y compris des documents, des images et des vidéos. HACKING-MD s'occupe de tout pour vous, de la compression à l'envoi.
+* **Interagir avec des autocollants :** HACKING-MD comprend vos émotions et sait comment les exprimer avec des autocollants amusants et pertinents. Il vous suffit de lui dire ce que vous ressentez et il trouvera le sticker parfait pour l'occasion.
+* **Faciliter la gestion de vos groupes :** HACKING-MD peut vous aider à gérer vos groupes WhatsApp de manière efficace. Il peut ajouter ou supprimer des membres, modifier les noms et les descriptions des groupes, et même envoyer des messages à tous les membres en même temps.
 
-- **Gestion de Groupe :** HACKING offre des fonctionnalités de gestion de groupe, comme l'ajout ou la suppression de membres, la configuration de règles et d'autres paramètres.
+**HACKING-MD est un outil indispensable pour tous ceux qui utilisent WhatsApp.** Il vous fera gagner du temps, vous simplifiera la vie et rendra vos conversations plus agréables.
 
-- **Text to img :** Les meilleurs logos on été sélectionné pour votre confort.
+**N'attendez plus, installez HACKING-MD dès aujourd'hui !**
 
-## Fonctionnalités Ludiques
+**Voici quelques autres avantages de HACKING-MD :**
 
-- **Blagues et Devinettes :** HACKING est équipé d'une collection de blagues et de devinettes pour égayer vos conversations.
+* **Disponible sur tous les appareils :** HACKING-MD est compatible avec tous les appareils, y compris les smartphones, les tablettes et les ordinateurs.
+* **Facile à utiliser :** HACKING-MD est très facile à utiliser, même pour les personnes qui ne sont pas familiarisées avec les robots.
+* **Personnalisable :** Vous pouvez personnaliser HACKING-MD en fonction de vos besoins.
+* **Gratuit :** HACKING-MD est entièrement gratuit.
 
-- **Citations Inspirantes :** Recevez des citations inspirantes pour vous motiver au quotidien.
-
+**HACKING-MD est le robot multi-appareils qui révolutionne vos conversations WhatsApp.** Installez-le dès aujourd'hui et découvrez toutes ses fonctionnalités !
 
 ## Obtenir HACKING 
 
