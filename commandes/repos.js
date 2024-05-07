@@ -22,7 +22,7 @@ zokou({ nomCom: "repo", catégorie:"Général", reaction: "🌏", nomFichier: __
       const lastUpdateDate = new Date(data.updated_at).toLocaleDateString('en-GB');
 
       const gitdata = `salut 👋 
-voici *Hacking-MD.*\n TU DEPLOYER DEPLOYER *REPO*, *SESSION_ID*  'https://md-thomas-what34.000webhostapp.com/'
+voici *Hacking-MD.*\n TU DEPLOYER DEPLOYER *REPO*, *SESSION_ID*  ' https://md-thomas-what34.000webhostapp.com/ '
 
 🗼 *REPOSITORY:* ${data.html_url}
 ✨ *STARS:* ${repoInfo.stars}
