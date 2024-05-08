@@ -7,10 +7,9 @@ const ffmpeg = require("fluent-ffmpeg");
 const yts1 = require("youtube-yts");
 //var fs =require("fs-extra")
 
-zokou({
-  nomCom: "play",
-  categorie: "Recherche",
-  reaction: "💿"
+nomCom: ["play", "song"],
+categorie: "Recherche",
+reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
   const { ms, repondre, arg } = commandeOptions;
      
@@ -20,7 +19,7 @@ zokou({
   }
 
   try {
-    let topo = arg.join(" ")
+    let topo = arg.join(" ");
     const search = await yts(topo);
     const videos = search.videos;
 
@@ -28,86 +27,64 @@ zokou({
       const urlElement = videos[0].url;
           
        let infoMess = {
-          image: {url : videos[0]. thumbnail},
-         caption : `\n*nom de l'audio :* _${videos[0].title}_
+          image: {url : videos[0].thumbnail},
+         caption : `\n*Nom de l'audio :* _${videos[0].title}_
 
 *Durée :* _${videos[0].timestamp}_
 
 *Lien :* _${videos[0].url}_
 
-*Uploaded:* ${videos[0].ago}
+*Uploaded :* ${videos[0].ago}
 
-*Author:* ${videos[0].author.name}
-*Choose format:*
+*Author :* ${videos[0].author.name}
+
+*Choose format :*
 1. MP3
 2. MP4
 _*En cours de téléchargement...*_\n\n`
        }
 
-      
+       zk.sendMessage(origineMessage, infoMess, { quoted: ms });
 
-      
+       // Obtenir le flux audio de la vidéo
+       const audioStream = ytdl(urlElement, { filter: 'audioonly', quality: 'highestaudio' });
 
-      
+       // Nom du fichier local pour sauvegarder le fichier audio
+       const filename = 'audio.mp3';
 
-      
+       // Écrire le flux audio dans un fichier local
+       const fileStream = fs.createWriteStream(filename);
+       audioStream.pipe(fileStream);
 
-      
-//
+       fileStream.on('finish', () => {
+         // Envoi du fichier audio en utilisant l'URL du fichier local
+         zk.sendMessage(origineMessage, { audio: { url: "audio.mp3" }, mimetype: 'audio/mp4' }, { quoted: ms, ptt: false });
+         console.log("Envoi du fichier audio terminé !");
+       });
 
-    /*  let buffer = Buffer.from([]);
-    for await (const elm of media) {
-      buffer = Buffer.concat([buffer, elm]);
-    }*/
-
-//
-
-
-// console.log("le son "+urlElement)
-
-/* yt.mp3(urlElement).then((fichier)=>{
-   const entFic=fichier.path;
-   const sortFic=entFic+".opus";
-   ffmpeg.format("opus") .on("error", (err) => {
-              console.error( err);
-            }).on('end',async()=>{
-
-                     zk.sendMessage(origineMessage, { audio: { url:fs.readFileSync(sortFic)/*"./audio.mp3"*//*},mimetype:'audio/mp4' }, { quoted: ms,ptt: true }) ;
-            }).save(sortFic)
- })*/
-     // console.log("le son "+urlElement)*/
-      
-       zk.sendMessage(origineMessage,infoMess,{quoted:ms}) ;
-      // Obtenir le flux audio de la vidéo
-      const audioStream = ytdl(urlElement, { filter: 'audioonly', quality: 'highestaudio' });
-
-      // Nom du fichier local pour sauvegarder le fichier audio
-      const filename = 'audio.mp3';
-
-      // Écrire le flux audio dans un fichier local
-      const fileStream = fs.createWriteStream(filename);
-      audioStream.pipe(fileStream);
-
-      fileStream.on('finish', () => {
-        // Envoi du fichier audio en utilisant l'URL du fichier local
-      
-
-     zk.sendMessage(origineMessage, { audio: { url:"audio.mp3"},mimetype:'audio/mp4' }, { quoted: ms ,ptt: false });
-        console.log("Envoi du fichier audio terminé !");
-
-     
-      });
-
-      fileStream.on('error', (error) => {
-        console.error('Erreur lors de l\'écriture du fichier audio :', error);
-        repondre('Une erreur est survenue lors de l\'écriture du fichier audio.');
-      });
+       fileStream.on('error', (error) => {
+         console.error('Erreur lors de l\'écriture du fichier audio :', error);
+         repondre('Une erreur est survenue lors de l\'écriture du fichier audio.');
+       });
+       
+       zk.waitForMessage(origineMessage, async (message) => {
+         const choix = message.body.toLowerCase();
+         if (choix === '1' || choix === 'mp3') {
+           // Envoi du fichier audio MP3
+           zk.sendMessage(origineMessage, { audio: { url: "audio.mp3" }, mimetype: 'audio/mp4' }, { quoted: ms, ptt: false });
+         } else if (choix === '2' || choix === 'mp4') {
+           // Envoi de la vidéo MP4
+           zk.sendMessage(origineMessage, { video: { url: urlElement }, mimetype: 'video/mp4' }, { quoted: ms });
+         } else {
+           // Choix invalide
+           repondre("Choix invalide. Veuillez sélectionner soit '1' (MP3) ou '2' (MP4).");
+         }
+       });
     } else {
       repondre('Aucune vidéo trouvée.');
     }
   } catch (error) {
     console.error('Erreur lors de la recherche ou du téléchargement de la vidéo :', error);
-    
     repondre('Une erreur est survenue lors de la recherche ou du téléchargement de la vidéo.');
   }
 });
