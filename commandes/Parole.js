@@ -1,9 +1,10 @@
 const {zokou} = require("../framework/zokou");
 const axios = require("axios");
+const traduire = require('../framework/traduction');
 const Genius = require("genius-lyrics"); 
 const Client = new Genius.Client("jKTbbU-6X2B9yWWl-KOm7Mh3_Z6hQsgE4mmvwV3P3Qe7oNa9-hsrLxQV5l5FiAZO");
 
-zokou({ nomCom: "poll",
+zokou({ nomCom: "sondage",
         reaction: "✨",
         categorie: "General" }, async (dest, zk, commandeOptions) => {
     
@@ -13,7 +14,7 @@ zokou({ nomCom: "poll",
     let [poll, opt] = polll.split("/");
 
     if (opt.split(",").length < 2) {
-        return repondre(`Format incorrect.\nExemple : poll Quelle est la réponse/Option 1, Option 2`);
+        return repondre(`Format incorrect.\nExemple : poll Quelle est la reponse/Option 1, Option 2`);
     }
 
     let options = [];
@@ -29,28 +30,28 @@ zokou({ nomCom: "poll",
     });
 });
 
-zokou({ nomCom: "fact",
+zokou({ nomCom: "faire",
         reaction: "✌️",
-        categorie: "User" }, async (dest, zk, commandeOptions) => {
+        categorie: "fun" }, async (dest, zk, commandeOptions) => {
     
     const { repondre, arg, ms } = commandeOptions; 
 
     const response = await axios.get('https://nekos.life/api/v2/fact');
     const data = response.data;
 
-    repondre(`◆━━━━━━✦FACT✦━━━━━━◆  
+    repondre(`◆━━━━━━✦FAIRE✦━━━━━━◆  
 *◇* ${data.fact}
 
 *◇* Powered by *Thomas*
 
 ╔═════◇
-║◇ *KEEP USING HACKING-MD*
+║◇ *FAIRE PAR HACKING-MD*
 ╚════════════════════>  `);
 });
 
-zokou({ nomCom: "quotes",
+zokou({ nomCom: "citation1",
         reaction: "🗿",
-        categorie: "User" }, async (dest, zk, commandeOptions) => {
+        categorie: "fun" }, async (dest, zk, commandeOptions) => {
     
     const { repondre, arg, ms } = commandeOptions; 
 
@@ -58,23 +59,23 @@ zokou({ nomCom: "quotes",
     const data = response.data;
 
     const flashhh = `
-◆━━━━━━✦QUOTE✦━━━━━━◆ 
+◆━━━━━━✦CITA✦━━━━━━◆ 
 ◇ _${data.quote.body}_
 
 ◇ *AUTHOR:* ${data.quote.author}
-
+💬 Citation: ${await traduire(quote.quote, { to: 'fr' })}
 ◇ _Powered by:_ *Thomas*
 
 ╔═════◇
-║◇ *KEEP USING HACKING-MD*
+║◇ *FAIRE PAR HACKING-MD*
 ╚════════════════════> `;
 
     repondre(flashhh);
 });
 
-zokou({ nomCom: "define",
+zokou({ nomCom: "definir",
         reaction: "😁",
-        categorie: "Search" }, async (dest, zk, commandeOptions) => {
+        categorie: "recherche" }, async (dest, zk, commandeOptions) => {
     
     const { repondre, arg, ms } = commandeOptions;  
         
@@ -88,6 +89,7 @@ zokou({ nomCom: "define",
         const { data } = await axios.get(`http://api.urbandictionary.com/v0/define?term=${ques}`);
         const textt = `
         Mot : ${ques}
+        Définition: ${await traduire(definition.replace, { to: 'fr' })}
         Définition : ${data.list[0].definition.replace(/\[/g, "").replace(/\]/g, "")}
         Exemple : ${data.list[0].example.replace(/\[/g, "").replace(/\]/g, "")}`;
 
@@ -97,9 +99,9 @@ zokou({ nomCom: "define",
     }
 });
 
-zokou({ nomCom: "lyrics2",
+zokou({ nomCom: "lyrics",
         reaction: "✨",
-        categorie: "Search" }, async (dest, zk, commandeOptions) => {
+        categorie: "recherche" }, async (dest, zk, commandeOptions) => {
     
     const { repondre, arg, ms } = commandeOptions;  
         
