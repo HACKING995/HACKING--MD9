@@ -32,43 +32,47 @@ const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
 ╭────✧${s.BOT}✧────◆
-│   _Préfixe_ : ${s.PREFIXE}
-│   _Owner_ : ${s.NOM_OWNER}
-│   _Mode_ : ${mode}
-│   _Commandes_ : ${cm.length}
-│   _Date_ : ${date}
-│   _Heure_ : ${temps}
-│   _Mémoire_ : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-│   _Plateforme_ : ${os.platform()}
-│   _Développeurs_ : Thomas 
+┃💎╭──────────────
+│💎  _Préfixe_ : ${s.PREFIXE}
+│💎 _Owner_ : ${s.NOM_OWNER}
+│💎 _Mode_ : ${mode}
+│💎 _Commandes_ : ${cm.length}
+│💎 _Date_ : ${date}
+│💎 _Heure_ : ${temps}
+│💎 _Mémoire_ : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
+│💎_Plateforme_ : ${os.platform()}
+│💎 _Développeurs_ : Thomas 
 │  & MD-HACKER 
-╰─────✧WA-BOT✧─────◆ \n\n`;
+│💎 _Version_ : V7.2
+│TH  ______________________________
+   *nouvelle version française Thomas*
+╰─────✧HG-BOT✧─────◆ \n\n`;
     
 let menuMsg = `
-👋 salut comment  allez ${nomAuteurMessage} 👋
+👋 salut comment  allez vous ${nomAuteurMessage} 👋
 
 *Voici la liste de mes commandes HACKING :*
 ◇                             ◇
 `;
 
     for (const cat in coms) {
-        menuMsg += `╭────❏ *${cat}* ❏`;
+        menuMsg += `╭────❏ *${cat}* —————❏`;
         for (const cmd of coms[cat]) {
             menuMsg += `
-| ❏│ *${cmd}*`;
+*|❏│ ${cmd}*`;
         }
         menuMsg += `
 ╰═════════════⊷ \n`
     }
 
     menuMsg += `
-◇            ◇
-*»»————— ★ —————««*
+◇                ◇
+*»»————— --- ★ --- —————««*
 Pour utiliser  une  commande, tapez  ${prefixe}"nom de la commande"
  
 powered by Hacking-md
      **YouTube**: https://youtube.com/@KouameDjakiss?si=k2HqPPSmHBZe3ABd                                         
-*»»————— ★ —————««*
+*»»——————————★—————————««*
 `;
 
     
