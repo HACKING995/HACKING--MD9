@@ -77,7 +77,7 @@ zokou({ nomCom: "calcul", reaction: "😂", categorie: "IA" }, async (dest, zk, 
   const { repondre, arg, ms } = commandeOptions;
 
   if (!arg || arg.length === 0) {
-    return repondre(`Please insert maths calculations like 1000*2.`);
+    return repondre(`Veuillez insérer des calculs mathématiques comme 1000*2.`);
   }
 
   // Regrouper les arguments en une seule chaîne séparée par "-"
