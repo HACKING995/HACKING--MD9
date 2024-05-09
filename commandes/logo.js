@@ -476,7 +476,7 @@ zokou({nomCom:"arena",categorie:"Logo",reaction:"🥵"},async(dest,zk,commandeOp
 
     var img = await mumaker.ephoto(lien,arg.join(' '));
    repondre("Traitement en cour ...")
-    await zk.sendMessage(dest,{image:{url:img.image},caption:" *Logo by Zokou-Md*"},{quoted:ms})
+    await zk.sendMessage(dest,{image:{url:img.image},caption:" *Logo by Hacking-Md*"},{quoted:ms})
   }catch(e){repondre(e)}
 })
 
