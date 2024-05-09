@@ -92,7 +92,7 @@ Description: ${tik.desc}
 
 zokou({
   nomCom: "fbdl2",
-  categorie: "Download",
+  categorie: "téléchargement",
   reaction: "📽️"
 },
 async (dest, zk, commandeOptions) => {
