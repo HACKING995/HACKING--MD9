@@ -73,6 +73,29 @@ zokou({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, c
   }
 });
 
+zokou({ nomCom: "calcul", reaction: "😂", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  const { repondre, arg, ms } = commandeOptions;
+
+  if (!arg || arg.length === 0) {
+    return repondre(`Please insert maths calculations like 1000*2.`);
+  }
+
+  // Regrouper les arguments en une seule chaîne séparée par "-"
+  const cal = arg.join(' ');
+  try {
+    const response = await axios.get(`https://api.maher-zubair.tech/ai/mathssolve?q=${cal}`);
+    const data = response.data;
+    await repondre(data.result);
+    console.log(data.completion);
+  } catch (error) {
+    console.error('Error requesting mathssolve API:', error);
+    repondre('Error during calculation.');
+  }
+});
+
+
+
+
 zokou({ nomCom: "gpt", reaction: "🌏", categorie: "IA" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
