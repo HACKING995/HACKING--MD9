@@ -7,7 +7,7 @@ const ffmpeg = require("fluent-ffmpeg");
 const yts1 = require("youtube-yts");
 //var fs =require("fs-extra")
 
-nomCom: ["play", "song"],
+zokou({nomCom: ["play", "song"],
 categorie: "Recherche",
 reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
