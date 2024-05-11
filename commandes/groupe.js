@@ -1093,3 +1093,75 @@ zokou({
 
   }
 } ) ;
+
+zokou({ nomCom: "ajouter", categorie: "Groupe", reaction: "👨" }, async (dest, zk, commandeOptions) => {
+  let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, nomAuteurMessage, auteurMessage, superUser, idBot } = commandeOptions;
+  let membresGroupe = verifGroupe ? await infosGroupe.participants : "";
+  if (!verifGroupe) { return repondre("Cette commande est réservée aux groupes."); }
+
+  const verifMembre = (user) => {
+    for (const m of membresGroupe) {
+      if (m.id === user) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  const membreAdmin = (membresGroupe) => {
+    const admin = [];
+    for (const m of membresGroupe) {
+      if (m.admin !== null) {
+        admin.push(m.id);
+      }
+    }
+    return admin;
+  }
+
+  const a = verifGroupe ? membreAdmin(membresGroupe) : [];
+
+  const admin = verifGroupe ? a.includes(auteurMsgRepondu) : false;
+  const membre = verifMembre(auteurMsgRepondu);
+  const autAdmin = verifGroupe ? a.includes(auteurMessage) : false;
+  const zkAdmin = verifGroupe ? a.includes(idBot) : false;
+
+  try {
+    if (autAdmin || superUser) {
+      if (msgRepondu) {
+        if (zkAdmin) {
+          if (!membre) {
+            if (!admin) {
+              const gifLink = "https://raw.githubusercontent.com/djalega8000/Zokou-MD/main/media/ajouter.gif";
+              const sticker = new Sticker(gifLink, {
+                pack: 'Hacking-Md', // The pack name
+                author: nomAuteurMessage, // The author name
+                type: StickerTypes.FULL, // The sticker type
+                categories: ['🤩', '🎉'], // The sticker category
+                id: '12345', // The sticker id
+                quality: 50, // The quality of the output file
+                background: '#000000'
+              });
+
+              await sticker.toFile("st.webp");
+              const txt = `@${auteurMsgRepondu.split("@")[0]} a été ajouté au groupe.\n`;
+              await zk.groupParticipantsUpdate(dest, [auteurMsgRepondu], "add");
+              zk.sendMessage(dest, { text: txt, mentions: [auteurMsgRepondu] });
+            } else {
+              repondre("Ce membre ne peut pas être ajouté car il est un administrateur du groupe.");
+            }
+          } else {
+            return repondre("Cet utilisateur est déjà membre du groupe.");
+          }
+        } else {
+          return repondre("Désolé, je ne peux pas effectuer cette action car je ne suis pas administrateur du groupe.");
+        }
+      } else {
+        repondre("Veuillez mentionner le membre à ajouter.");
+      }
+    } else {
+      return repondre("Désolé, vous n'êtes pas autorisé à effectuer cette action car vous n'êtes pas administrateur du groupe.");
+    }
+  } catch (e) {
+    repondre("Oops, une erreur s'est produite : " + e);
+  }
+});
