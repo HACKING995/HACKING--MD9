@@ -27,16 +27,17 @@ reaction: "💿"
       const urlElement = videos[0].url;
           
        let infoMess = {
-          image: {url : videos[0].thumbnail},
-         caption : `\n*Nom de l'audio :* _${videos[0].title}_
+  image: { url: videos[0].thumbnail },
+  caption: `╭━━⊱𝗛𝗔𝗖𝗞𝗜𝗡𝗚-𝗠𝗗⊱━━╮
+*Song Name:* ${videos[0].title}
 
-*Durée :* _${videos[0].timestamp}_
+*Uploaded:* ${videos[0].ago}
 
-*Lien :* _${videos[0].url}_
+*Author:* ${videos[0].author.name}
 
-*Uploaded :* ${videos[0].ago}
+*URL:* ${videos[0].url}
 
-*Author :* ${videos[0].author.name}
+Views: ${videos[0].views}
 
 *Choose format :*
 1. MP3
