@@ -19,7 +19,7 @@ zokou({ nomCom: "yts", categorie: "Recherche", reaction: "✋" }, async (dest, z
 
     let captions = "";
     for (let i = 0; i < 15; i++) {
-      captions += `----------------\n${i + 1}.Titre : ${resultat[i].title}\nDurée : ${resultat[i].timestamp}\nLien : ${resultat[i].url}\n`;
+      captions += `╭━━⊱𝗛𝗔𝗖𝗞𝗜𝗡𝗚-𝗠𝗗⊱━━╮\n${i + 1}.Titre : ${resultat[i].title}\nDurée : ${resultat[i].timestamp}\nLien : ${resultat[i].url}\n`;
     }
     captions += "\n======\n*powered by Hacking-Md*";
 
