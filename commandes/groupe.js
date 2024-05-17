@@ -206,6 +206,40 @@ zokou({ nomCom: "demettre", categorie: "Groupe", reaction: "👨🏿‍💼" }, 
 
 })
 
+zokou({ nomCom: "ajouter", categorie: 'Groupe', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
+  let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, nomAuteurMessage, auteurMessage, superUser, idBot } = commandeOptions;
+  let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
+  if (!verifGroupe) { return repondre("for groups only");} 
+
+  const participants = await message.groupMetadata(message.jid)
+		const isImAdmin = await isAdmin(participants, message.client.user.jid)
+		if (!isImAdmin) return await message.send(`_Je suis pas  admin._`)
+		match = match || message.reply_message.jid
+		if (!match) return await message.send('Example : add 2250545065189')
+		// if (!match.startsWith('@@')) {
+		// 	match = jidToNum(match)
+		// 	const button = await genButtonMessage(
+		// 		[
+		// 			{ id: `@@`, text: 'NO' },
+		// 			{ id: `add @@${match}`, text: 'YES' },
+		// 		],
+		// 		`Your Number maybe banned, Do you want add @${match}`,
+		// 		''
+		// 	)
+		// 	return await message.send(
+		// 		button,
+		// 		{ contextInfo: { mentionedJid: [numToJid(match)] } },
+		// 		'button'
+		// 	)
+		// }
+		match = jidToNum(match)
+		const res = await message.Add(match)
+		if (res == '403') return await message.send('_Failed, Invite sent_')
+		else if (res && res != '200')
+			return await message.send(res, { quoted: message.data })
+
+});
+
 
 
 /** ***fin démettre****  **/
@@ -1093,37 +1127,3 @@ zokou({
 
   }
 } ) ;
-
-zokou({ nomCom: "ajouter", categorie: 'Group', reaction: "👨🏿‍💼" }, async (dest, zk, commandeOptions) => {
-  let { repondre, msgRepondu, infosGroupe, auteurMsgRepondu, verifGroupe, nomAuteurMessage, auteurMessage, superUser, idBot } = commandeOptions;
-  let membresGroupe = verifGroupe ? await infosGroupe.participants : ""
-  if (!verifGroupe) { return repondre("for groups only");} 
-
-  const participants = await message.groupMetadata(message.jid)
-		const isImAdmin = await isAdmin(participants, message.client.user.jid)
-		if (!isImAdmin) return await message.send(`_Je suis pas  admin._`)
-		match = match || message.reply_message.jid
-		if (!match) return await message.send('Example : add 2250545065189')
-		// if (!match.startsWith('@@')) {
-		// 	match = jidToNum(match)
-		// 	const button = await genButtonMessage(
-		// 		[
-		// 			{ id: `@@`, text: 'NO' },
-		// 			{ id: `add @@${match}`, text: 'YES' },
-		// 		],
-		// 		`Your Number maybe banned, Do you want add @${match}`,
-		// 		''
-		// 	)
-		// 	return await message.send(
-		// 		button,
-		// 		{ contextInfo: { mentionedJid: [numToJid(match)] } },
-		// 		'button'
-		// 	)
-		// }
-		match = jidToNum(match)
-		const res = await message.Add(match)
-		if (res == '403') return await message.send('_Failed, Invite sent_')
-		else if (res && res != '200')
-			return await message.send(res, { quoted: message.data })
-
-});
