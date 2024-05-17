@@ -112,12 +112,19 @@ zokou({
       const Element = videos[0];
 
       let InfoMess = {
-        image: { url: videos[0].thumbnail },
-        caption: `*nom de la vidéo :* _${Element.title}_
-*Durée :* _${Element.timestamp}_
-*Lien :* _${Element.url}_
-_*En cours de téléchargement...*_\n\n`
-      };
+  image: { url: Element.thumbnail },
+  caption: `╭━━⊱𝗛𝗔𝗖𝗞𝗜𝗡𝗚-𝗠𝗗⊱━━╮
+*Video Name:* ${Element.title}
+*Uploaded:* ${Element.ago}
+*Author:* ${Element.author.name}
+*URL:* ${Element.url}
+
+*Choose format:*
+1. MP3
+2. MP4
+
+_*Downloading...*_`
+};
 
       zk.sendMessage(origineMessage, InfoMess, { quoted: ms });
 
