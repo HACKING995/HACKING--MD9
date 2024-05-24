@@ -1,10 +1,10 @@
-const axios = require('axios');
 const {zokou} = require('../framework/zokou');
+const axios = require('axios');
 zokou({nomCom : "meteo" , reaction : 🐖 , categorie : "GÉNÉRAL"},async (dest , zk , commandeOptions)=>{
   const {text,repondre,textw} = commandeOptions ;
 if (!text) return repondre("Give me location!!");
             const response = await axios.get(
-                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
+                `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=fr`
             );
             let textw = "";
             textw += `*🌟Weather of  ${text}*\n\n`;
