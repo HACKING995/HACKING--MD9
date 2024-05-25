@@ -2,16 +2,14 @@ const { zokou } = require("../framework/zokou");
 const moment = require("moment-timezone");
 const { default: axios } = require('axios');
 
-zokou({ nomCom: 'hack',
-    desc: 'hacking someones Whatsapp',
-    Categorie: 'General',
-    reaction: '🦠', 
-    fromMe: 'true', 
+const isHackCommandEnabled = true; // Assurez-vous que cette variable est correctement définie
 
-  },
-  async (dest, zk, commandeOptions) => {
-    const { repondre, arg, ms } = commandeOptions;
+zokou({ nomCom: "hack", categorie: "Général", reaction:"👨‍🏫", active: isHackCommandEnabled }, async (dest, zk, commandeOptions) => {
+  const { ms, arg, repondre } = commandeOptions;
+  const message = arg.join(' ');
 
+  try {
+    // Envoi de messages simulant un processus de piratage
     await zk.sendMessage(dest, "```thomas-md Injecting malware```");
     await sleep(30000);
 
@@ -67,8 +65,8 @@ zokou({ nomCom: 'hack',
     await sleep(30000);
 
     return zk.sendMessage(dest, '*ALL FILES TRANSFERRED*');
-  });
+});
 
 async function sleep(ms) {
-  await new Promise(resolve => setTimeout(resolve, ms));
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
