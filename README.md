@@ -40,7 +40,7 @@
 
 2. ## OBTENEZ DES SESSIONS DE CE  BOT : <br>
   
-[**Session-1**](https://md-thomas-what34.000webhostapp.com/)  ; *TOUT  LES SESSION  SE TROUVE ICI*
+[**Session-1**](https://habot.000webhostapp.com/)  ; *TOUT  LES SESSION  SE TROUVE ICI*
 
  
 
