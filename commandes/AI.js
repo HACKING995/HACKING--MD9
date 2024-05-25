@@ -55,14 +55,14 @@ zokou({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, c
 
     // Regrouper les arguments en une seule chaîne séparée par "-"
     const image = arg.join(' ');
-    const response = await axios.get(`https://vihangayt.me/tools/photoleap?q=${image}`);
+    const response = await axios.get(`https://api.maher-zubair.tech/ai/photoleap?q=${image}`);
     
     const data = response.data;
-    let caption = '*Propulsé par ZOKOU-MD*';
+    let caption = '*Propulsé par HACKING-MD*';
     
-    if (data.status && data.owner && data.data) {
+    if (data.status && data.result) {
       // Utiliser les données retournées par le service
-      const imageUrl = data.data;
+      const imageUrl = data.result;
       zk.sendMessage(dest, { image: { url: imageUrl }, caption: caption }, { quoted: ms });
     } else {
       repondre("Erreur lors de la génération de l'image");
@@ -131,3 +131,44 @@ zokou({ nomCom: "thomas", reaction: "🌏", categorie: "IA" }, async (dest, zk, 
   await repondre(data.result);
   console.log(data.completion);
 });
+
+
+/*zokou({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+  const { repondre, arg, ms } = commandeOptions;
+
+  try {
+    if (!arg || arg.length === 0) {
+      return repondre(`Veuillez entrer les informations nécessaires pour générer l'image.`);
+    } else {
+      // Regrouper les arguments en une seule chaîne séparée par un espace
+      const image = arg.join(' ');
+      const imageSize = '256x256';
+      const apiUrl = 'https://api.openai.com/v1/images/generations';
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${s.GPT}`
+        },
+        body: JSON.stringify({
+          model: 'image-alpha-001',
+          prompt: image,
+          size: imageSize,
+          response_format: 'url'
+        })
+      });
+
+      const data = await response.json();
+    
+      if (data && data.data && data.data.length > 0 && data.data[0].url) {
+        zk.sendMessage(dest, { image: { url: data.data[0].url }, caption: '*Propulsé par HACKING-MD*'}, { quoted: ms });
+      } else {
+        repondre("Erreur lors de la génération de l'image");
+      }
+    }
+  } catch (error) {
+    console.error('Erreur:', error.message || 'Une erreur s\'est produite');
+    repondre("Oups, une erreur est survenue lors du traitement de votre demande.");
+  }
+});
+*/
