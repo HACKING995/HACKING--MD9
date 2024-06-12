@@ -1,5 +1,5 @@
-
-<h1 align="center"> HACKING MD SERVICE BOT WHATSAPP  </h1>
+le
+<h1 align="center"> EVAN MD SERVICE BOT WHATSAPP  </h1>
 <p align="center">  
 
 ***
@@ -11,30 +11,30 @@
 <p align="center">
 
 
- ## HACKING-MD : le robot multi-appareils qui révolutionne vos conversations WhatsApp
+ ## EVAN-MD : le robot multi-appareils qui révolutionne vos conversations WhatsApp
 
 **Imaginez un assistant personnel qui vous accompagne dans toutes vos conversations WhatsApp.** Un assistant capable de gérer vos fichiers, d'interagir avec des autocollants et de faciliter la gestion de vos groupes. Cet assistant, c'est HACKING-MD.
 
-**HACKING-MD est bien plus qu'un simple robot.** C'est un véritable compagnon qui vous fera gagner du temps et vous simplifiera la vie. Voici quelques exemples de ce qu'il peut faire pour vous :
+**EVAN-MD est bien plus qu'un simple robot.** C'est un véritable compagnon qui vous fera gagner du temps et vous simplifiera la vie. Voici quelques exemples de ce qu'il peut faire pour vous :
 
 * **Gérer vos fichiers :** Envoyez et recevez des fichiers de toutes sortes, y compris des documents, des images et des vidéos. HACKING-MD s'occupe de tout pour vous, de la compression à l'envoi.
-* **Interagir avec des autocollants :** HACKING-MD comprend vos émotions et sait comment les exprimer avec des autocollants amusants et pertinents. Il vous suffit de lui dire ce que vous ressentez et il trouvera le sticker parfait pour l'occasion.
-* **Faciliter la gestion de vos groupes :** HACKING-MD peut vous aider à gérer vos groupes WhatsApp de manière efficace. Il peut ajouter ou supprimer des membres, modifier les noms et les descriptions des groupes, et même envoyer des messages à tous les membres en même temps.
+* **Interagir avec des autocollants :** EVAN-MD comprend vos émotions et sait comment les exprimer avec des autocollants amusants et pertinents. Il vous suffit de lui dire ce que vous ressentez et il trouvera le sticker parfait pour l'occasion.
+* **Faciliter la gestion de vos groupes :** EVAN-MD peut vous aider à gérer vos groupes WhatsApp de manière efficace. Il peut ajouter ou supprimer des membres, modifier les noms et les descriptions des groupes, et même envoyer des messages à tous les membres en même temps.
 
-**HACKING-MD est un outil indispensable pour tous ceux qui utilisent WhatsApp.** Il vous fera gagner du temps, vous simplifiera la vie et rendra vos conversations plus agréables.
+**EVAN-MD est un outil indispensable pour tous ceux qui utilisent WhatsApp.** Il vous fera gagner du temps, vous simplifiera la vie et rendra vos conversations plus agréables.
 
-**N'attendez plus, installez HACKING-MD dès aujourd'hui !**
+**N'attendez plus, installez EVAN-MD dès aujourd'hui !**
 
-**Voici quelques autres avantages de HACKING-MD :**
+**Voici quelques autres avantages de EVAN-MD :**
 
-* **Disponible sur tous les appareils :** HACKING-MD est compatible avec tous les appareils, y compris les smartphones, les tablettes et les ordinateurs.
-* **Facile à utiliser :** HACKING-MD est très facile à utiliser, même pour les personnes qui ne sont pas familiarisées avec les robots.
-* **Personnalisable :** Vous pouvez personnaliser HACKING-MD en fonction de vos besoins.
-* **Gratuit :** HACKING-MD est entièrement gratuit.
+* **Disponible sur tous les appareils :** EVAN-MD est compatible avec tous les appareils, y compris les smartphones, les tablettes et les ordinateurs.
+* **Facile à utiliser :** EVAN-MD est très facile à utiliser, même pour les personnes qui ne sont pas familiarisées avec les robots.
+* **Personnalisable :** Vous pouvez personnaliser EVAN-MD en fonction de vos besoins.
+* **Gratuit :** EVAN-MD est entièrement gratuit.
 
-**HACKING-MD est le robot multi-appareils qui révolutionne vos conversations WhatsApp.** Installez-le dès aujourd'hui et découvrez toutes ses fonctionnalités !
+**EVAN-MD est le robot multi-appareils qui révolutionne vos conversations WhatsApp.** Installez-le dès aujourd'hui et découvrez toutes ses fonctionnalités !
 
-## OBTENIR HACKING SESSION_ID 
+## OBTENIR EVAN SESSION_ID 
 
 1. Veillez cliquer sur **[ETOILE](https://github.com/HACKING995/HACKING--MD9/edit/main/README.md)** afin de copier le repo sur votre compte github.  veillez bien ajouter une etoile 🌟 pour encourager les développeurs 
 
@@ -62,13 +62,13 @@ Les contributions à HACKING sont les bienvenues ! Si vous avez des idées pour 
                 
 ## Licence
 
-Le Bot WhatsApp HACKING est publié sous la [Licence MIT](https://opensource.org/licenses/MIT).
+Le Bot WhatsApp EVAN est publié sous la [Licence MIT](https://opensource.org/licenses/MIT).
 
 Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer vos conversations et rendre votre expérience WhatsApp plus intéressante !
 
 
 ## Developpeur :
  
-  [**Thomas**](https://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ)<br>
-  [**᚛MD-HACKER ᚜**](https://wa.me/22588697148)
+  [**EVAN**](https://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ)<br>
+  [**᚛MD--✮͢≛⃝𝙇𝞢𝙎 𝞓𝞠ô𝙏𝞒𝞢𝙎 𖣘𝞢𝝯𝞓𝞜✞ ᚜**](https://wa.me/2250171967343)
  
