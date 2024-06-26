@@ -58,7 +58,7 @@ zokou({ nomCom: "dalle", reaction: "📡", categorie: "IA" }, async (dest, zk, c
     const response = await axios.get(`https://api.maher-zubair.tech/ai/photoleap?q=${image}`);
     
     const data = response.data;
-    let caption = '*Propulsé par ZOKOU-MD*';
+    let caption = '*Propulsé par HACKING-MD*';
     
     if (data.status && data.result) {
       // Utiliser les données retournées par le service
@@ -96,6 +96,43 @@ zokou({ nomCom: "gpt", reaction: "📡", categorie: "IA" }, async (dest, zk, com
     repondre("Oups, une erreur est survenue lors du traitement de votre demande.");
   }
 });
+
+zokou({nomCom:"chat",reaction:"📡",categorie:"IA"},async(dest,zk,commandeOptions)=>{
+
+  const {repondre,ms,arg}=commandeOptions;
+  
+    if(!arg || !arg[0])
+    {return repondre("oui je vous ecoute.")}
+    //var quest = arg.join(' ');
+  try{
+    
+    
+const message = await traduire(arg.join(' '),{ to : 'en'});
+ console.log(message)
+fetch(`http://api.brainshop.ai/get?bid=177607&key=NwzhALqeO1kubFVD&uid=[uid]&msg=${message}`)
+.then(response => response.json())
+.then(data => {
+  const botResponse = data.cnt;
+  console.log(botResponse);
+
+  traduire(botResponse, { to: 'fr' })
+    .then(translatedResponse => {
+      repondre(translatedResponse);
+    })
+    .catch(error => {
+      console.error('Erreur lors de la traduction en français :', error);
+      repondre('Erreur lors de la traduction en français');
+    });
+})
+.catch(error => {
+  console.error('Erreur lors de la requête à BrainShop :', error);
+  repondre('Erreur lors de la requête à BrainShop');
+});
+
+  }catch(e){ repondre("oupsaa une erreur : "+e)}
+    
+  
+  });  
 
 /*zokou({ nomCom: "gpt", reaction: "📡", categorie: "IA" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg } = commandeOptions;
