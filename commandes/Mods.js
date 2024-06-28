@@ -603,4 +603,50 @@ exemple : mention https://static.animecorner.me/2023/08/op2.jpg image Salut moi 
         else {
             repondre('Veiller respecter la consigne svp') ;
         }
-})
+}),
+  zokou({
+  nomCom: 'efface,
+  categorie: 'Mods',
+}, async (dest, zk, commandeOptions) => {
+
+  const { ms, repondre, superUser, arg } = commandeOptions;
+
+  if (!superUser) { repondre('This command is allowed to mods only'); return }
+
+  let msg = await zk.getLastMessageInChat(dest);
+
+  //console.log(msg) ;
+
+  await zk.chatModify({
+    delete: true,
+    lastMessages: [{ key: msg.key, messageTimestamp: msg.messageTimestamp }]
+  },
+    dest);
+
+  repondre("cleared");
+
+});
+
+
+zokou({
+  nomCom: 'archive',
+  categorie: 'Mods',
+}, async (dest, zk, commandeOptions) => {
+
+  const { ms, repondre, superUser, arg } = commandeOptions;
+
+  if (!superUser) { repondre('This command is allowed to mods only'); return }
+
+  let msg = await zk.getLastMessageInChat(dest);
+
+  //console.log(msg) ;
+
+  await zk.chatModify({
+    archive: true,
+    lastMessages: [msg]
+  },
+    dest);
+
+  repondre("the discussion has been archived");
+
+});
