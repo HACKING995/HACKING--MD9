@@ -2,7 +2,7 @@ const { zokou } = require('../framework/zokou');
 const traduire = require("../framework/traduction");
 const s = require('../set');
 const axios = require('axios');
-
+const fetch = require('node-fetch');
 // Flash command
 zokou({
   'nomCom': "alexa",
