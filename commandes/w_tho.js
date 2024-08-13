@@ -9,14 +9,14 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
-zokou({ nomCom: "channel", categorie: "General" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "channel", categorie: "Général" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../framework//zokou");
     var coms = {};
     var mode = "public";
     
-    if ((s.MODE).toLocaleLowerCase() != "yes") {
-        mode = "private";
+    if ((s.MODE).toLocaleLowerCase() != "oui") {
+        mode = "privé";
     }
 
 
