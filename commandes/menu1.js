@@ -37,7 +37,7 @@ const date = moment().format('DD/MM/YYYY');
 *${s.BOT} MENUS DISPONIBLES* 
 ╭─────────────────✣
 │❒⁠⁠⁠⁠╭─────────────✣
-│❒⁠⁠⁠⁠│▸ *BUG MENU* 
+│❒⁠⁠⁠⁠│▸ *BUGMENU* 
 │❒⁠⁠⁠⁠│▸ *CHANNEL* 
 │❒⁠⁠⁠⁠│▸ *REPO* 
 │❒⁠⁠⁠⁠╰──────────────✇
@@ -51,7 +51,7 @@ const date = moment().format('DD/MM/YYYY');
 > 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐓𝐇𝐎𝐌𝐀𝐒 𝐓𝐄𝐂𝐇\n${readmore}`;
     
 let menuMsg = `
-> Hello ${nomAuteurMessage},,, Type bug menu,channel or repo pour accéder à une liste de commandes  . 
+> salut ${nomAuteurMessage},,, mettre  la commande bugmenu,channel or repo  et insert ${prefixe} tu like et la commande_nom.
   
 ╰───────────────────⏣`;
 
