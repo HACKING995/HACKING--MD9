@@ -8,7 +8,7 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
-zokou({ nomCom: "menu1", categorie: "General" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../framework//zokou");
     var coms = {};
@@ -34,24 +34,24 @@ const temps = moment().format('HH:mm:ss');
 const date = moment().format('DD/MM/YYYY');
 
   let infoMsg =  `
-*${s.BOT} AVAILABLE MENUS* 
+*${s.BOT} MENUS DISPONIBLES* 
 ╭─────────────────✣
 │❒⁠⁠⁠⁠╭─────────────✣
-│❒⁠⁠⁠⁠│▸ *MENU1* 
-│❒⁠⁠⁠⁠│▸ *MENU2* 
-│❒⁠⁠⁠⁠│▸ *MENU3*
+│❒⁠⁠⁠⁠│▸ *BUG MENU* _pour accès  a  tout  les commande_
+│❒⁠⁠⁠⁠│▸ *CHANNEL* _pour  avoir  accès notre  chaîne WhatsApp_
+│❒⁠⁠⁠⁠│▸ *REPO* _pour avoir accès  à  mon repo et la session Id_
 │❒⁠⁠⁠⁠╰──────────────✇
 │❒⁠⁠⁠⁠│▸ *COMMANDE* : ${cm.length} 
 │❒⁠⁠⁠⁠│▸ *RAM* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-│❒⁠⁠⁠⁠│▸ *UPTIME* : ${os.platform()}
-│❒⁠⁠⁠⁠│▸ *THEME* : *THOMAS TECH*
+│❒⁠⁠⁠⁠│▸ *PLATEFORME* : ${os.platform()}
+│❒⁠⁠⁠⁠│▸ *DEVIS* : *THOMAS TECH*
 │❒⁠⁠⁠⁠╰──────────────✇
 ╰──────────────────✇
 > 𝐇𝐀𝐂𝐊𝐈𝐍𝐆-𝐌𝐃 𝐍𝐄𝐖 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 𝐋𝐀𝐓𝐄𝐒𝐓
 > 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐓𝐇𝐎𝐌𝐀𝐒 𝐓𝐄𝐂𝐇\n${readmore}`;
     
 let menuMsg = `
-> Hello ${nomAuteurMessage},,, Type menu1,menu2 or menu3 to access a list of commands. 
+> Hello ${nomAuteurMessage},,, Type bug menu,channel or repo pour accéder à une liste de commandes  . 
   
 ╰───────────────────⏣`;
 
