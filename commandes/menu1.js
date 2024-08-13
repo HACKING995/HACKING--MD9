@@ -37,9 +37,9 @@ const date = moment().format('DD/MM/YYYY');
 *${s.BOT} MENUS DISPONIBLES* 
 ╭─────────────────✣
 │❒⁠⁠⁠⁠╭─────────────✣
-│❒⁠⁠⁠⁠│▸ *BUG MENU* _pour accès  a  tout  les commande_
-│❒⁠⁠⁠⁠│▸ *CHANNEL* _pour  avoir  accès notre  chaîne WhatsApp_
-│❒⁠⁠⁠⁠│▸ *REPO* _pour avoir accès  à  mon repo et la session Id_
+│❒⁠⁠⁠⁠│▸ *BUG MENU* 
+│❒⁠⁠⁠⁠│▸ *CHANNEL* 
+│❒⁠⁠⁠⁠│▸ *REPO* 
 │❒⁠⁠⁠⁠╰──────────────✇
 │❒⁠⁠⁠⁠│▸ *COMMANDE* : ${cm.length} 
 │❒⁠⁠⁠⁠│▸ *RAM* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
