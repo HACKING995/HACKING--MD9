@@ -35,7 +35,7 @@
      "LIENS_MENU" : {
     
       "description":"Ajoutez un ou plusieurs lien(s) d'image ou de video pour votre bot ; exemple : lien1,lien2,lien3......",
-      "value":"https://wallpapercave.com/uwp/uwp3943464.jpeg",
+      "value":"https://telegra.ph/file/7113ddc85a26a69a7a437.jpg",
       "required":false
        
      },
