@@ -8,7 +8,7 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206)
 const readmore = more.repeat(4001)
 
-zokou({ nomCom: "menu2", categorie: "General" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions) => {
     let { ms, repondre ,prefixe,nomAuteurMessage,mybotpic} = commandeOptions;
     let { cm } = require(__dirname + "/../framework//zokou");
     var coms = {};
@@ -36,16 +36,16 @@ const date = moment().format('DD/MM/YYYY');
   let infoMsg =  `
 ╭────《《  ${s.BOT} 》》─────✣
 │☹︎╭─────────────✣
-│☹︎│▸ *BOT-OWNER* : ${s.OWNER_NAME}
-│☹︎│▸ *COMMANDER* : ${nomAuteurMessage} 
+│☹︎│▸ *BOT-PROPIO* : ${s.OWNER_NAME}
+│☹︎│▸ *AUTEUR* : ${nomAuteurMessage} 
 │☹︎╰──────────────✇
-│☹︎│▸ *TODAY* : ${date}
+│☹︎│▸ *DATE* : ${date}
 │☹︎│▸ *PREFIX* : ${s.PREFIXE}
-│☹︎│▸ *WORKTYPE* : ${mode} mode
-│☹︎│▸ *PLUGINS* : ${cm.length} 
+│☹︎│▸ *MODE* : ${mode} mode
+│☹︎│▸ *COMMANDE* : ${cm.length} 
 │☹︎│▸ *RAM* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
-│☹︎│▸ *RUNNING ON* : ${os.platform()}
-│☹︎│▸ *THEME* : *BELTAH KE*
+│☹︎│▸ *PLATEFORME* : ${os.platform()}
+│☹︎│▸ *DÉVELOPPEUR* : *THOMAS TEC*
 │☹︎╰──────────────✇
 ╰──────────────────✇
 > 𝐇𝐀𝐂𝐊𝐈𝐍𝐆-𝐌𝐃 𝐍𝐄𝐖 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 𝐋𝐀𝐓𝐄𝐒𝐓
@@ -53,7 +53,7 @@ const date = moment().format('DD/MM/YYYY');
     
 let menuMsg = `
 
- *❄︎LIST COMMANDES❄︎*${readmore}
+ *❄︎LISTE DES  COMMANDES❄︎*${readmore}
 `;
 
     for (const cat in coms) {
