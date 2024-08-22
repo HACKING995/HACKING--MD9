@@ -14,8 +14,8 @@ zokou({ nomCom: "menu", categorie: "General" }, async (dest, zk, commandeOptions
     var coms = {};
     var mode = "public";
     
-    if ((s.MODE).toLocaleLowerCase() != "yes") {
-        mode = "private";
+    if ((s.MODE).toLocaleLowerCase() != "oui") {
+        mode = "privé";
     }
 
 
@@ -36,16 +36,16 @@ const date = moment().format('DD/MM/YYYY');
   let infoMsg =  `
 ╭────《《  ${s.BOT} 》》─────✣
 │☹︎╭─────────────✣
-│☹︎│▸ *BOT-PROPIO* : ${s.OWNER_NAME}
+│☹︎│▸ *PROPRIETAIRE* : ${s.NOM_OWNER}
 │☹︎│▸ *AUTEUR* : ${nomAuteurMessage} 
 │☹︎╰──────────────✇
 │☹︎│▸ *DATE* : ${date}
 │☹︎│▸ *PREFIX* : ${s.PREFIXE}
-│☹︎│▸ *MODE* : ${mode} mode
+│☹︎│▸ *MODE* : ${mode}
 │☹︎│▸ *COMMANDE* : ${cm.length} 
 │☹︎│▸ *RAM* : ${format(os.totalmem() - os.freemem())}/${format(os.totalmem())}
 │☹︎│▸ *PLATEFORME* : ${os.platform()}
-│☹︎│▸ *DÉVELOPPEUR* : *THOMAS TEC*
+│☹︎│▸ *DEVELOPPEUR* : *THOMAS*
 │☹︎╰──────────────✇
 ╰──────────────────✇
 > 𝐇𝐀𝐂𝐊𝐈𝐍𝐆-𝐌𝐃 𝐍𝐄𝐖 𝐕𝐄𝐑𝐒𝐈𝐎𝐍 𝐋𝐀𝐓𝐄𝐒𝐓
