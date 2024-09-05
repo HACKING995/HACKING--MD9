@@ -40,7 +40,7 @@
 
 2. ## OBTENEZ DES SESSIONS DE CE  BOT : <br>
   
-[**Session-1**](https://habot.000webhostapp.com/)  ; *TOUT  LES SESSION  SE TROUVE ICI*
+[**TOUTES SESSION ID**](https://rodhackgang.github.io/Service-/)  ; *TOUTES LES SESSIONS  SE TROUVENT ICI*
 
  
 
