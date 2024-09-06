@@ -38,10 +38,15 @@
 
 1. Veillez cliquer sur **[ETOILE](https://github.com/HACKING995/HACKING--MD9)** afin de copier le repo sur votre compte github.  veillez bien ajouter une etoile 🌟 pour encourager les développeurs 
 
-2. ## OBTENEZ DES SESSIONS DE CE  BOT : <br>
+
+
+2. veillez fork ici [**FORK TON REPO ICI**](https://github.com/HACKING995/HACKING--MD9/fork)
+
+   
+
+3. ## OBTENEZ DES SESSIONS DE CE  BOT : <br>
   
 [**TOUTES SESSION ID**](https://rodhackgang.github.io/Service-/)  ; *TOUTES LES SESSIONS  SE TROUVENT ICI*
-
  
 
 ## DEPLOYMENT 
