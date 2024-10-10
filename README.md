@@ -46,7 +46,7 @@
 
 3. ## OBTENEZ DES SESSIONS DE CE  BOT : <br>
   
-[**TOUTES SESSION ID**](https://rodhackgang.github.io/Service-/)  ; *TOUTES LES SESSIONS  SE TROUVENT ICI*
+[**TOUTES SESSION ID**](https://hacking995.github.io/SESSION-ID-WEBCAM.COM/)  ; *TOUTES LES SESSIONS  SE TROUVENT ICI*
  
 
 ## DEPLOYMENT 
