@@ -43,6 +43,7 @@
     "form-data": "^4.0.0",
     "fs-extra": "^11.1.1",
     "g-i-s": "^2.1.7",
+    "gifted-dls": "^1.2.7",
     "genius-lyrics": "^4.4.3",
     "google-it": "^1.6.4",
     "google-tts-api": "latest",
