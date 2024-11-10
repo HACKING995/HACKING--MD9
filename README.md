@@ -6,13 +6,14 @@
 
 
 
+
 <html>
    <body>
       <p align="center">  
-         <a aria-label="FORK" href="https://github.com/HACKING995/HACKING--MD-bot/fork" target="_blank">
-            <img alt="License: GPL-3" src="https://img.HACKING995.io/github/stars/HACKING995/HACKING--MD?style=social" />
+         <a aria-label="FORK" href="https://github.com/SuhailTechInfo/Secktor-bot/fork" target="_blank">
+            <img alt="License: GPL-3" src="https://img.shields.io/github/stars/SuhailTechInfo/web-qr?style=social" />
          </a>
-         <a aria-label="HACKING-MD is free to use" href="https://youtube.com/@device.bot.thomas?si=QprwgdfegV82BRmH"target="_blank">
+         <a aria-label="Suhail_Md is free to use" href="https://youtube.com/@suhailtechinfo" target="_blank">
             <img alt="SuhailTechInfo" src="https://img.shields.io/youtube/channel/subscribers/UCU071AMRqcd5mfTdCgJFwPg" />
          </a>
          <a aria-label="Visiter mon site" href="https://www.tonsite.com" target="_blank">
