@@ -6,7 +6,7 @@ const giftedapikey = '_0x5aff35,_0x1876r';
 const fs = require('fs');
 
 zokou({
-  nomCom: "play",
+  nomCom: "play2",
   categorie: "Download",
   reaction: "💿"
 }, async (dest, zk, commandeOptions) => {
@@ -72,7 +72,7 @@ zokou({
 });
 
 zokou({
-  nomCom: "song",
+  nomCom: "song2",
   categorie: "Download",
   reaction: "💿"
 }, async (dest, zk, commandeOptions) => {
@@ -139,7 +139,7 @@ zokou({
 
 
 zokou({
-  nomCom: "video",
+  nomCom: "video2",
   categorie: "Download",
   reaction: "🎥"
 }, async (dest, zk, commandeOptions) => {
@@ -205,7 +205,7 @@ zokou({
 });
 
 zokou({
-  nomCom: "videodoc",
+  nomCom: "videodoc2",
   categorie: "Download",
   reaction: "🎥"
 }, async (dest, zk, commandeOptions) => {
@@ -270,7 +270,7 @@ zokou({
   }
 });
 
-zokou({ nomCom: "yts", categorie: "Recherche", reaction: "✋" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "yts2", categorie: "Recherche", reaction: "✋" }, async (dest, zk, commandeOptions) => {
   const { ms, repondre, arg } = commandeOptions;
   const query = arg.join(" ");
 
@@ -298,7 +298,7 @@ zokou({ nomCom: "yts", categorie: "Recherche", reaction: "✋" }, async (dest, z
 
 
 zokou({
-  nomCom: "ytmp3",
+  nomCom: "ytmp32",
   categorie: "Téléchargement",
   reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
@@ -337,7 +337,7 @@ zokou({
 
 
 zokou({
-  nomCom: "ytv2mp3",
+  nomCom: "ytv2mp33",
   categorie: "Téléchargement",
   reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
@@ -376,7 +376,7 @@ zokou({
 
 
 zokou({
-  nomCom: "ytmp4",
+  nomCom: "ytmp42",
   categorie: "Téléchargement",
   reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
@@ -415,7 +415,7 @@ zokou({
 
 
 zokou({
-  nomCom: "ytv2mp4",
+  nomCom: "ytv2mp42",
   categorie: "Téléchargement",
   reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
@@ -454,7 +454,7 @@ zokou({
 
 
 zokou({
-  nomCom: "ytmp4doc",
+  nomCom: "ytmp4doc2",
   categorie: "Téléchargement",
   reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
@@ -492,7 +492,7 @@ zokou({
 
 
 zokou({
-  nomCom: "ytmp3doc",
+  nomCom: "ytmp3doc2",
   categorie: "Téléchargement",
   reaction: "💿"
 }, async (origineMessage, zk, commandeOptions) => {
