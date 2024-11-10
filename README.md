@@ -13,10 +13,13 @@
          <a aria-label="FORK" href="https://github.com/SuhailTechInfo/Secktor-bot/fork" target="_blank">
             <img alt="License: GPL-3" src="https://img.shields.io/github/stars/SuhailTechInfo/web-qr?style=social" />
          </a>
-         <a aria-label="Suhail_Md is free to use" href="https://youtube.com/@suhailtechinfo" target="_blank">
+         <a aria-label="Suhail_Md is free to use" href="https://youtube.com/@device.bot.thomas?si=at-aPzwvhhyOvaF5" target="_blank">
             <img alt="SuhailTechInfo" src="https://img.shields.io/youtube/channel/subscribers/UCU071AMRqcd5mfTdCgJFwPg" />
+
+
+            
          </a>
-         <a aria-label="Visiter mon site" href="https://www.tonsite.com" target="_blank">
+         <a aria-label="Visiter mon site" href="https://premium-apk.newinformatique24.com/index.html/" target="_blank">
             <img alt="Mon Site" src="https://img.shields.io/badge/Mon%20Site-Visit%20Now-brightgreen" />
          </a>
          <p align="center">
