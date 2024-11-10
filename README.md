@@ -4,13 +4,6 @@
 <p align="center">  
 
 
-
-<a href="https://www.youtube.com/ton_channel" target="_blank">YouTube</a>
-        <a href="https://wa.me/ton_numero" target="_blank">WhatsApp</a>
-        <a href="https://www.tonsite.com" target="_blank">Mon Site</a>
-        <a href="tel:ton_numero">Appeler</a>
-
-
 ***
   
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=721c24&center=true&width=910&height=100&lines=HACKING LE ROBOT+RÉVOLUTIONNE;MULTI+SERVICE+WHATSAPP+BOT;CRÉER+PAR+THOMAS+TECH;BOT DATÉE+06.6.2024" alt="Typing SVG" /></a>
