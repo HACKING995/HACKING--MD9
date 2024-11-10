@@ -73,7 +73,13 @@ Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer v
 
 
 ## Developpeur :
+
+
+<img alt="HACKING-MD" width="700" height="300" src="https://telegra.ph/file/ac3a8142e8e18bcabb75b.jpg">
+<p align="center">
+<p align="center">
+
  
   [**Thomas**](https://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ)<br>
-  [**᚛MD-HACKER ᚜**](https://wa.me/22588697148)
+  [**᚛MD-HACKER ᚜**](https://wa.me/2250507646665)
  
