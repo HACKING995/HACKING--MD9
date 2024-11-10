@@ -54,6 +54,70 @@
   1. si vous ne disposez pas de compte **heroku** cliquez [**ici create**](https://id.heroku.com/login) pour vous en procurer un .
   2.  cliquez [**ici heroku**](https://dashboard.heroku.com/new?template=https://github.com/HACKING995/HACKING--MD9) pour deployer le bot sur **heroku**
 
+
+```name: Node.js CI
+
+on:
+
+push:
+
+branches:
+
+- main
+
+pull_request:
+
+branches:
+
+- main
+
+jobs:
+
+build:
+
+runs-on: ubuntu-latest
+
+strategy:
+
+matrix:
+
+node-version: [20.x]
+
+steps:
+
+- name: Checkout repository
+
+uses: actions/checkout@v3
+
+- name: Set up Node.js
+
+uses: actions/setup-node@v3
+
+with:
+
+node-version: ${{ matrix.node-version }}
+
+- name: Install dependencies
+
+run: npm install
+
+- name: Start application
+
+run: npm start```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - **Déploiement sur Koyeb**
   1. si vous n'avez pas de compte **koyeb** cliquez [**ici**](https://dashboard.koyeb.com/signup) pour vous en procurer un .
   2.  cliquez [**ici**](https://app.koyeb.com/apps/deploy?type=git&repository=https://github.com/HACKING995/HACKING--MD9/tree/main?tab=readme-ov-file&branch=main&name=zokou-md&env%5BNOM_OWNER%5D=FedoRA&env%5BPREFIXE%5D=~&env%5BMODE_PUBLIC%5D=non&env%5BLECTURE_AUTO_STATUS%5D=non&env%5BTELECHARGER_AUTO_STATUS%5D=oui&env%5BNOM_BOT%5D=Zokou+2.0&env%5BLIENS_MENU%5D=https://static.animecorner.me/2023/08/op2.jpg&env%5BNUMERO_OWNER%5D=22573777061&env%5BETAT%5D=1&env%5BDATABASE_URL%5D=postgres://zokou_user:b9o2NIT2r7YmvzQbH65e4Ub7ixY3T0jr@dpg-cma2fsfqd2ns73dscejg-a.oregon-postgres.render.com/zokou&env%5BWARN_COUNT%5D=3&env%5BSTARTING_BOT_MESSAGE%5D=oui&env%5BANTI_DELETE_MESSAGE%5D=oui
@@ -74,10 +138,10 @@ Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer v
 
 ## Developpeur :
 
+<img alt="HACKING-MD" width="700" height="300" src="https://iili.io/2IycfGS.jpg">
+<p align="center">
+<p align="center">
 
-<img alt="HACKING-MD" width="700" height="300" src="https://telegra.ph/file/ac3a8142e8e18bcabb75b.jpg">
-<p align="center">
-<p align="center">
 
  
   [**Thomas**](https://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ)<br>
