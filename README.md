@@ -103,7 +103,9 @@ run: npm install
 
 - name: Start application
 
-run: npm start ```
+run: npm start
+
+```
 
 
 
