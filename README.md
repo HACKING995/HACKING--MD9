@@ -1,4 +1,82 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking MD Service Bot WhatsApp</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #721c24;
+        }
+        .typing {
+            margin: 20px 0;
+        }
+        .social-icons {
+            margin: 20px 0;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 24px;
+            color: #721c24;
+        }
+        .social-icons a:hover {
+            color: #007BFF;
+        }
+        img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 align="center">HACKING MD SERVICE BOT WHATSAPP</h1>
+
+    <p class="typing">
+        <a href="https://git.io/typing-svg">
+            <img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=721c24&center=true&width=910&height=100&lines=HACKING+LE+ROBOT+RÉVOLUTIONNE;MULTI+SERVICE+WHATSAPP+BOT;CRÉER+PAR+THOMAS+TECH;BOT+DATÉE+06.6.2024" alt="Typing SVG" />
+        </a>
+    </p>
+
+    <img alt="HACKING-MD" src="https://telegra.ph/file/ac3a8142e8e18bcabb75b.jpg">
+
+    <div class="social-icons">
+        <h2>Suivez-nous sur les réseaux sociaux</h2>
+        <a href="https://www.youtube.com/ton_channel" target="_blank">YouTube</a>
+        <a href="https://wa.me/ton_numero" target="_blank">WhatsApp</a>
+        <a href="https://www.tonsite.com" target="_blank">Mon Site</a>
+        <a href="tel:ton_numero">Appeler</a>
+    </div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1 align="center"> HACKING MD SERVICE BOT WHATSAPP  </h1>
 <p align="center">  
 
