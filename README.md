@@ -1,44 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hacking MD Service Bot WhatsApp</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            color: #721c24;
-        }
-        .typing {
-            margin: 20px 0;
-        }
-        .social-icons {
-            margin: 20px 0;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            font-size: 24px;
-            color: #721c24;
-        }
-        .social-icons a:hover {
-            color: #007BFF;
-        }
-        img {
-            width: 100%;
-            max-width: 700px;
-            height: auto;
-        }
-    </style>
-</head>
-<body>
 
     <h1 align="center">HACKING MD SERVICE BOT WHATSAPP</h1>
 
@@ -58,8 +18,6 @@
         <a href="tel:ton_numero">Appeler</a>
     </div>
 
-</body>
-</html>
 
 
 
