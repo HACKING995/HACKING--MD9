@@ -64,7 +64,7 @@
 
 **HACKING-MD est le robot multi-appareils qui révolutionne vos conversations WhatsApp.** Installez-le dès aujourd'hui et découvrez toutes ses fonctionnalités !
 
-## OBTENIR HACKING SESSION_ID 
+## OBTENIR HACKING TOUT  LES INFORMATIONS  DU BOT WHATSAPP 
 
 1. Veillez cliquer sur **[ETOILE](https://github.com/HACKING995/HACKING--MD9)** afin de copier le repo sur votre compte github.  veillez bien ajouter une etoile 🌟 pour encourager les développeurs 
 
