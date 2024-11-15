@@ -83,6 +83,25 @@
 - **déploiement sur heroku**
   1. si vous ne disposez pas de compte **heroku** cliquez [**ici create**](https://id.heroku.com/login) pour vous en procurer un .
   2.  cliquez [**ici heroku**](https://dashboard.heroku.com/new?template=https://github.com/HACKING995/HACKING--MD9) pour deployer le bot sur **heroku**
+  3.  
+
+## *Talkdrove déploiement*
+
+1.  inscrivez  vous  si tu n'as pas  un compte
+
+2.  cliquez [**ICI pour créer talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB)
+
+3. UTILISER  CETTE  DATABASE
+ `postgresql://thomas_nse0_user:DNcjvbg1wtgeAW8hPvxLwUIEYTOTgbZe@dpg-cse5hcjtq21c73850jvg-a.oregon-postgres.render.com/thomas_nse0`
+
+
+
+
+
+
+
+
+  
 
 ## *GIHUD  DÉPLOIEMENT*
 ```name: Node.js CI
