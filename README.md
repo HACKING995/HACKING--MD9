@@ -89,10 +89,10 @@
 
 1.  inscrivez  vous  si tu n'as pas  un compte
 
-2.  cliquez [**ICI pour créer talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB)
+2.  cliquez [**ici  pour créer compte talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB)
 
 3. UTILISER  CETTE  DATABASE
- `postgresql://thomas_nse0_user:DNcjvbg1wtgeAW8hPvxLwUIEYTOTgbZe@dpg-cse5hcjtq21c73850jvg-a.oregon-postgres.render.com/thomas_nse0`
+ ``postgresql://thomas_nse0_user:DNcjvbg1wtgeAW8hPvxLwUIEYTOTgbZe@dpg-cse5hcjtq21c73850jvg-a.oregon-postgres.render.com/thomas_nse0``
 
 
 
