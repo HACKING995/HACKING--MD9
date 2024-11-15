@@ -13,7 +13,7 @@
             <img alt="License: GPL-3" src="https://img.shields.io/github/stars/HACKING995/HACKING--MD9?style=social" />
          </a>
          <a aria-label="Hacking_Md is free to use" href="https://youtube.com/@device.bot.thomas?si=_BI0XE8mvcMfGaY8" target="_blank">
-            <img alt="Thomas tech" src="https://img.shields.io/youtube/channel/subscribers/V3mdAsNE4L8ZACfj   " />
+            <img alt="Thomas tech" src="https://img.shields.io/youtube/subscribers/V3mdAsNE4L8ZACfj   " />
          </a>
          <a aria-label="Mon site web" href="https://premium-apk.newinformatique24.com/index.html/" target="_blank">
             <img alt="Mon Site" src="https://img.shields.io/badge/Mon%20Site-Visit%20Now-brightgreen" />
