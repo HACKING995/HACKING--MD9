@@ -64,13 +64,18 @@
 
 **HACKING-MD est le robot multi-appareils qui révolutionne vos conversations WhatsApp.** Installez-le dès aujourd'hui et découvrez toutes ses fonctionnalités !
 
-## OBTENIR HACKING TOUT  LES INFORMATIONS  DU BOT WHATSAPP 
+## OBTENIR HACKING-MD BOT WHATSAPP TOUT  LES INFORMATIONS   
+
+
 
 1. Veillez cliquer sur **[ETOILE](https://github.com/HACKING995/HACKING--MD9)** afin de copier le repo sur votre compte github.  veillez bien ajouter une etoile 🌟 pour encourager les développeurs 
 
 
 
 2. veillez fork ici [**FORK TON REPO ICI**](https://github.com/HACKING995/HACKING--MD9/fork)
+
+
+
 
    
 
@@ -79,11 +84,19 @@
 [**TOUTES SESSION ID**](https://hacking995.github.io/SESSION-ID-WEBCAM.COM/)  ; *TOUTES LES SESSIONS  SE TROUVENT ICI*
  
 
+
+
+
+
 ## DEPLOYMENT 
 - **déploiement sur heroku**
   1. si vous ne disposez pas de compte **heroku** cliquez [**ici create**](https://id.heroku.com/login) pour vous en procurer un .
   2.  cliquez [**ici heroku**](https://dashboard.heroku.com/new?template=https://github.com/HACKING995/HACKING--MD9) pour deployer le bot sur **heroku**
   3.  
+
+
+
+
 
 ## *Talkdrove déploiement*
 
