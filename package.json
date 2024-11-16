@@ -4,15 +4,24 @@
   "description": "",
   "main": "index.js",
   "type": "commonjs",
-  "scripts": {
-  "postinstall": "npm install pm2 -g",
-    "test": "node index.js",
-    "s": "node index.js",
-    "zokou": "pm2 start index.js --attach",
-    "web": "pm2 start web.js --attach",
-    "c": "tsc",
-    "start": "node index.js"
-  },
+
+"scripts": {
+
+"postinstall": "npm install pm2 -g",
+
+"test": "node index.js",
+
+"start": "pm2 start web.js --attach",
+
+"zokou": "pm2 start index.js --attach",
+
+"web": "pm2 start web.js --attach",
+
+"c": "tsc"
+
+},
+  
+  
   "keywords": [
     "bot",
     "Baileys",
