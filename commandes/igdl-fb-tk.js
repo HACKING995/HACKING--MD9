@@ -81,7 +81,7 @@ zokou({
 
 // Commande TikTok Video
 zokou({
-    nomCom: "tiktok2",
+    nomCom: "tikdl",
     categorie: "Téléchargement",
     reaction: '🎵',
     desc: "Télécharger une vidéo Tiktok",
@@ -143,7 +143,7 @@ zokou({
   }
 
   if (!arg[0]) {
-    repondre("Please insert an *X Video Link* for *FLASH-MD* to download");
+    repondre("Please insert an *X Video Link* for *HACKIN-MD* to download");
     return;
   }
 
@@ -173,9 +173,9 @@ zokou({
 
 
 zokou({
-  'nomCom': 'twitter2',
+  'nomCom': 'twdl',
   'aliases': ['xdl'],
-  'categorie': 'Download',
+  'categorie': 'Téléchargement,
   'reaction': '🐦'
 }, async (dest, zk, commandeOptions) => {
   const {
@@ -244,50 +244,6 @@ function extractUrlFromMessage(arg) {
 
 
 
-
-zokou({
-  'nomCom': "tiktok",
-  'categorie': "Download",
-  'aliases': ["tik", "tok", 'tikdl']
-}, async (dest, zk, commandeOptions) => {
-  const {
-    ms,
-    repondre,
-    arg
-  } = commandeOptions;
-
-  const videoLink = arg.join(" ");
-  
-  if (!videoLink) {
-    return repondre("Please insert a TikTok video link!");
-  }
-
-  try {
-    const response = await fetch("https://api.prabath-md.tech/api/tiktokdl?url=" + encodeURIComponent(videoLink));
-    const data = await response.json();
-    
-    if (!data.data || !data.data.no_wm) {
-      return repondre("Failed to retrieve video. Please check the link and try again.");
-    }
-
-    await repondre("A moment, *FLASH-MD* is downloading that...");
-    const videoUrl = data.data.no_wm;
-
-    await zk.sendMessage(dest, {
-      'video': {
-        'url': videoUrl
-      },
-      'caption': "╰►𝐇𝐞𝐫𝐞 𝐢𝐬 𝐲𝐨𝐮𝐫 𝐓𝐢𝐤𝐓𝐨𝐤 𝐕𝐢𝐝𝐞𝐨!\n𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐝 𝐛𝐲 *HACKING-𝐌𝐃*",
-      'gifPlayback': false
-    }, {
-      'quoted': ms
-    });
-    
-  } catch (error) {
-    console.error(error);
-    await repondre("An error occurred while processing the request. Please try again later.");
-  }
-});
 
 
 
