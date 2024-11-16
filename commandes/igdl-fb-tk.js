@@ -105,7 +105,7 @@ zokou({
         fs.writeFileSync("./tiktokvideo.mp4", Buffer.from(response.data));
         await zk.sendMessage(dest, {
             video: { url: "./tiktokvideo.mp4" },
-            caption: "Et voila!",
+            caption: "Et voila! mon es joué remerciements *THOMAS*",
             gifPlayback: false
         });
         console.log("Done!");
