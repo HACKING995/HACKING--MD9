@@ -30,7 +30,7 @@ zokou({
             // Si échec, envoi en tant qu'image
             await zk.sendMessage(dest, {
                 image: { url: response.data.result[0].url },
-                caption: "ig image downloader powered by *Zokou-Md*"
+                caption: "ig image downloader powered by *HACKIN-MD*"
             });
         }
     } catch (error) {
