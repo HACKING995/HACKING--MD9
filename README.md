@@ -107,7 +107,8 @@
 3. UTILISER  CETTE  DATABASE
  ``postgresql://thomas_nse0_user:DNcjvbg1wtgeAW8hPvxLwUIEYTOTgbZe@dpg-cse5hcjtq21c73850jvg-a.oregon-postgres.render.com/thomas_nse0``
 
-
+4. [**Cliquez ici pour  tuto**](https://youtu.be/dU0sZcP-34A)
+5. *cliquez  dessus  pour  regarder  la vidéo  comment  déployer  si vous  des problèmes 
 
 
 
