@@ -13,7 +13,7 @@ zokou({
     let url = arg.join(" ");
     
     if (!arg[0]) {
-        repondre("Veuillez insérer un lien video Instagram");
+        repondre("Veuillez insérer un lien vidéo Instagram");
         return;
     }
 
@@ -67,7 +67,7 @@ zokou({
 
             zk.sendMessage(dest, {
                 video: { url: result.hd },
-                caption: "Téléchargeur de vidéo Facebook, propulsé par *HACKING-MD*"
+                caption: "Téléchargeur de vidéo Facebook, propulsé par *HACKIN-MD*"
             }, { quoted: ms });
         }).catch(error => {
             console.log("Error:", error);
@@ -83,8 +83,8 @@ zokou({
 zokou({
     nomCom: "tikdl",
     categorie: "Téléchargement",
-    reaction: '🎵',
-    desc: "Télécharger une vidéo Tiktok",
+    reaction: '🤝',
+    desc: "Télécharger une vidéo TikTok",
     alias: ["ttv"]
 }, async (dest, zk, commandeOptions) => {
     const { arg, ms, prefixe, repondre } = commandeOptions;
@@ -105,158 +105,124 @@ zokou({
         fs.writeFileSync("./tiktokvideo.mp4", Buffer.from(response.data));
         await zk.sendMessage(dest, {
             video: { url: "./tiktokvideo.mp4" },
-            caption: "Et voila!",
+            caption: "Et voilà! remerciement à thomas",
             gifPlayback: false
         });
         console.log("Done!");
     } catch (error) {
-        repondre("Erreur lors du telechargement de la video");
+        repondre("Erreur lors du téléchargement de la vidéo");
         console.log(error);
     } finally {
         fs.unlinkSync("./tiktokvideo.mp4");
     }
 });
 
-
-
+// Commande X Video Download
 zokou({
-  'nomCom': "xvid",
-  'categorie': "Download",
-  'aliases': ["xxx", "porn", "xxxnx"]
+    nomCom: "xvid",
+    categorie: "Download",
+    aliases: ["xxx", "porn", "xxxnx"]
 }, async (dest, zk, commandeOptions) => {
-  const {
-    ms,
-    repondre,
-    arg
-  } = commandeOptions;
+    const { ms, repondre, arg } = commandeOptions;
 
-  let inputLink = arg.join(" ");
-  
-  const linkMap = {
-    'xvid': "https://example.com/xvid",
-    'porn': "https://example.com/porn",
-    'xxxnx': "https://example.com/xxxnx"
-  };
+    let inputLink = arg.join(" ");
+    
+    const linkMap = {
+        'xvid': "https://example.com/xvid",
+        'porn': "https://example.com/porn",
+        'xxxnx': "https://example.com/xxxnx"
+    };
 
-  if (linkMap[inputLink]) {
-    inputLink = linkMap[inputLink];
-  }
-
-  if (!arg[0]) {
-    repondre("Please insert an *X Video Link* for *HACKIN-MD* to download");
-    return;
-  }
-
-  try {
-    const response = await fetch('https://api.prabath-md.tech/api/xvdl?url=' + encodeURIComponent(inputLink));
-    const data = await response.json();
-
-    if (data && data.data && data.data.download) {
-      const downloadLink = data.data.download;
-      await zk.sendMessage(dest, {
-        'video': {
-          'url': downloadLink
-        },
-        'caption': "Here is your 18+ Video.\n_╰►DOWNLOADED BY_ *FLASH-MD*",
-        'gifPlayback': false
-      }, {
-        'quoted': ms
-      });
-    } else {
-      repondre("No downloadable link found for the provided URL.");
+    if (linkMap[inputLink]) {
+        inputLink = linkMap[inputLink];
     }
-  } catch (error) {
-    repondre("I am unable to download your media.\n" + error.message);
-  }
+
+    if (!arg[0]) {
+        repondre("Please insert an *X Video Link* for *HACKIN-MD* to download");
+        return;
+    }
+
+    try {
+        const response = await fetch('https://api.prabath-md.tech/api/xvdl?url=' + encodeURIComponent(inputLink));
+        const data = await response.json();
+
+        if (data && data.data && data.data.download) {
+            const downloadLink = data.data.download;
+            await zk.sendMessage(dest, {
+                'video': {
+                    'url': downloadLink
+                },
+                'caption': "Here is your 18+ Video.\n_╰►DOWNLOADED BY_ *FLASH-MD*",
+                'gifPlayback': false
+            }, {
+                'quoted': ms
+            });
+        } else {
+            repondre("No downloadable link found for the provided URL.");
+        }
+    } catch (error) {
+        repondre("I am unable to download your media.\n" + error.message);
+    }
 });
 
-
-
+// Commande Twitter Download
 zokou({
-  'nomCom': 'twdl',
-  'aliases': ['xdl'],
-  'categorie': 'Téléchargement,
-  'reaction': '🐦'
+    nomCom: 'twdl',
+    aliases: ['xdl'],
+    categorie: 'Téléchargement',
+    reaction: '🐦'
 }, async (dest, zk, commandeOptions) => {
-  const {
-    repondre,
-    ms,
-    arg
-  } = commandeOptions;
+    const { repondre, ms, arg } = commandeOptions;
 
-  const twitterUrl = extractUrlFromMessage(arg);
-  
-  if (!twitterUrl) {
-    return repondre("Please provide a valid Twitter URL.");
-  }
-
-  try {
-    const response = await fetch("https://api.guruapi.tech/xdown?url=" + encodeURIComponent(twitterUrl));
-    const data = await response.json();
-
-    if (!data || !data.media || data.media.length === 0) {
-      return repondre("No media found or invalid response from API.");
+    const twitterUrl = extractUrlFromMessage(arg);
+    
+    if (!twitterUrl) {
+        return repondre("Please provide a valid Twitter URL.");
     }
 
-    for (const mediaItem of data.media) {
-      const mediaType = mediaItem.type;
-      const mediaUrl = mediaItem.url;
-      const caption = mediaType === "video" 
-        ? "_╰►VIDEO  DOWNLOADED BY_ *HACKIND-MD*" 
-        : "_╰►IMAGE DOWNLOADED BY_ *HACKING-MD*";
+    try {
+        const response = await fetch("https://api.guruapi.tech/xdown?url=" + encodeURIComponent(twitterUrl));
+        const data = await response.json();
 
-      if (mediaType === "video") {
-        await zk.sendMessage(dest, {
-          'video': {
-            'url': mediaUrl
-          },
-          'caption': caption
-        }, {
-          'quoted': ms
-        });
-      } else if (mediaType === "image") {
-        await zk.sendMessage(dest, {
-          'image': {
-            'url': mediaUrl
-          },
-          'caption': caption
-        }, {
-          'quoted': ms
-        });
-      }
+        if (!data || !data.media || data.media.length === 0) {
+            return repondre("No media found or invalid response from API.");
+        }
+
+        for (const mediaItem of data.media) {
+            const mediaType = mediaItem.type;
+            const mediaUrl = mediaItem.url;
+            const caption = mediaType === "video" 
+                ? "_╰►VIDEO  DOWNLOADED BY_ *HACKING-MD*" 
+                : "_╰►IMAGE DOWNLOADED BY_ *HACKING-MD*";
+
+            if (mediaType === "video") {
+                await zk.sendMessage(dest, {
+                    'video': {
+                        'url': mediaUrl
+                    },
+                    'caption': caption
+                }, { quoted: ms });
+            } else if (mediaType === "image") {
+                await zk.sendMessage(dest, {
+                    'image': {
+                        'url': mediaUrl
+                    },
+                    'caption': caption
+                }, { quoted: ms });
+            }
+        }
+    } catch (error) {
+        console.error("Error occurred while retrieving data:", error);
+        repondre("Error occurred while retrieving data: " + error.message);
     }
-  } catch (error) {
-    console.error("Error occurred while retrieving data:", error);
-    repondre("Error occurred while retrieving data: " + error.message);
-  }
 });
 
+// Helper function to extract URLs from messages
 function extractUrlFromMessage(arg) {
-  const message = Array.isArray(arg) ? arg.join(" ") : arg;
-  const match = message.match(/https:\/\/(x|twitter)\.com\/[^\s]+/);
-  return match ? match[0] : null;
+    const message = Array.isArray(arg) ? arg.join(" ") : arg;
+    const match = message.match(/https:\/\/(x|twitter)\.com\/[^\s]+/);
+    return match ? match[0] : null;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Commande Facebook Download (Basse qualité)
 zokou({
