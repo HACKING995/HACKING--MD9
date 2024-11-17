@@ -1,7 +1,7 @@
 
 
 
-<h1 align="center"> HACKING MD SERVICE BOT WHATSAPP  </h1>
+<h1 align="center"> HACKING MD  BOT WHATSAPP  </h1>
 <p align="center">  
 
 
@@ -68,11 +68,10 @@
 
 
 
-1. Veillez cliquer sur **[ETOILE](https://github.com/HACKING995/HACKING--MD9)** afin de copier le repo sur votre compte github.  veillez bien ajouter une etoile 🌟 pour encourager les développeurs 
+1. Veillez cliquer sur **[ETOILE](https://github.com/HACKING995/HACKING--MD9)** afin d’encourager les développeurs de ce robot WhatsApp. 
 
 
-
-2. veillez fork ici [**FORK TON REPO ICI**](https://github.com/HACKING995/HACKING--MD9/fork)
+2. veillez appuyer ici pour copier ce repo github vers votre compte github [**FORK TON REPO ICI**](https://github.com/HACKING995/HACKING--MD9/fork)
 
 
 
@@ -81,7 +80,7 @@
 
 3. ## OBTENEZ DES SESSIONS DE CE  BOT : <br>
   
-[**TOUTES SESSION ID**](https://hacking995.github.io/SESSION-ID-WEBCAM.COM/)  ; *TOUTES LES SESSIONS  SE TROUVENT ICI*
+[**SESSION ID**](https://hacking995.github.io/SESSION-ID-WEBCAM.COM/)  ; *TOUTES LES SESSIONS  SE TROUVENT ICI*
  
 
 
@@ -92,34 +91,45 @@
 - **déploiement sur heroku**
   1. si vous ne disposez pas de compte **heroku** cliquez [**ici create**](https://id.heroku.com/login) pour vous en procurer un .
   2.  cliquez [**ici heroku**](https://dashboard.heroku.com/new?template=https://github.com/HACKING995/HACKING--MD9) pour deployer le bot sur **heroku**
-  3.  
+   
 
 
 
 
 
-## *Talkdrove déploiement*
+## *Déployer sur Talkdrove*
 
 1.  inscrivez  vous  si tu n'as pas  un compte
 
-2.  cliquez [**ici  pour créer compte talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB)
+2.  cliquez [**ici  pour créer compte talkdrove**](https://host.talkdrove.com/signup?ref=HR99E1G1)
 
-3. UTILISER  CETTE  DATABASE
+3. UTILISER le DATABASE_URL ou url de base de données suivant : 
  ``postgresql://thomas_nse0_user:DNcjvbg1wtgeAW8hPvxLwUIEYTOTgbZe@dpg-cse5hcjtq21c73850jvg-a.oregon-postgres.render.com/thomas_nse0``
 
-4. [**Cliquez ici pour  tuto**](https://youtu.be/dU0sZcP-34A)
-5. *cliquez  dessus  pour  regarder  la vidéo  comment  déployer  si vous  des problèmes 
+4. [**Cliquez ici pour  regarder le tutoriel**](https://youtu.be/dU0sZcP-34A) si vous n’arrivez pas à déployer.
 
 
-6. 
-2.  cliquez [**ici  pour deployer  sur talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB) c'est  gratuit  24h/7
+
+ 5.  cliquez [**ici  pour deployer  sur talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB) c'est  gratuit  et votre bot restera actif 24h/7
 
 
 
   
 
-## *GIHUD  DÉPLOIEMENT*
-```name: Node.js CI
+## *Déployer directement Sur GITHUB*
+
+##### 1- Cliquez sur le deuxième carré avec les 3 points
+
+##### 2- Cliquez sur create à New file ou Créer un nouveau fichier
+
+##### 3- Dans le nom de fichier écrivez .github/workflows/deploy.yml
+
+##### 4- Modifiez le fichier set.env avec vos informations 
+
+##### 5-Ajoutez le contenu suivant :
+
+```
+name: Node.js CI
 
 on:
 
@@ -171,7 +181,8 @@ run: npm start
 
 ```
 
-
+###### 5- Le bot devrait être fonctionnel pendant 6heures de temps
+**À chaque fois qu’il s’arrêté modifiez le warn count dans le set.env**
 
 
 
@@ -202,7 +213,7 @@ Le Bot WhatsApp HACKING est publié sous la [Licence MIT](https://opensource.org
 Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer vos conversations et rendre votre expérience WhatsApp plus intéressante !
 
 
-## Developpeur :
+## Développeurs :
 
 <img alt="HACKING-MD" width="700" height="300" src="https://iili.io/2IycfGS.jpg">
 <p align="center">
@@ -212,4 +223,5 @@ Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer v
  
   [**Thomas**](https://chat.whatsapp.com/CmrAOrFSBMi4eXW8xL5UHZ)<br>
   [**᚛MD-HACKER ᚜**](https://wa.me/2250507646665)
+  [**᚛Famous-Tech**](https://wa.me/50943782508)
  
