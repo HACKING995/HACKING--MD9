@@ -29,7 +29,8 @@
     "whatsapp",
     "whatsapp-bot",
     "Thomas",
-    "Md HACKER"
+    "Md HACKER",
+    "FAMOUS-TECH"
   ],
   "author": "Thomas && Md HACKER",
   "license": "ISC",
@@ -76,6 +77,7 @@
     "sequelize": "^6.32.1",
     "translatte": "^3.0.1",
     "types": "^0.1.1",
+    "puppeteer": "^19.0.0",
     "typescript": "^5.1.6",
     "wa-sticker-formatter": "^4.4.4",
     "youtube-yts": "^2.0.0",
