@@ -118,7 +118,7 @@
 
 ## *Déployer directement Sur GITHUB*
 
-##### 1- Cliquez sur le deuxième carré avec les 3 points
+##### 1- Cliquez sur le +
 
 ##### 2- Cliquez sur create à New file ou Créer un nouveau fichier
 
