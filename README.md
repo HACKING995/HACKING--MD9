@@ -111,7 +111,8 @@
 5. *cliquez  dessus  pour  regarder  la vidéo  comment  déployer  si vous  des problèmes 
 
 
-
+6. 
+2.  cliquez [**ici  pour deployer  sur talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB) c'est  gratuit  24h/7
 
 
 
