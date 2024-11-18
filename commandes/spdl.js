@@ -4,7 +4,7 @@ const fs = require("fs");
 
 zokou({
   nomCom: "spload",
-  categorie: "Musique",
+  categorie: "FAMOUS-MUSIQUE",
   reaction: "🎧",
   desc: "Télécharge une musique à partir d'un lien Spotify",
   alias: ["spdl"]
