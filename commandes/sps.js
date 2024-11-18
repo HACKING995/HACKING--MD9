@@ -4,7 +4,7 @@ const fs = require("fs");
 
 zokou({
   nomCom: "spotifysearch",
-  categorie: "Musique",
+  categorie: "FAMOUS-DOWNLOADER🇭🇹",
   reaction: "🎵",
   desc: "Recherche une musique sur Spotify et la télécharge",
   alias: ["sps"]
