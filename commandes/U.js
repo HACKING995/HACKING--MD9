@@ -2,7 +2,7 @@ const { zokou } = require("../framework/zokou");
 const axios = require("axios");
 
 zokou({
-  nomCom: "url2",
+  nomCom: "url4",
   categorie: "FAMOUS-TECH",
   reaction: "🌐",
   desc: "Téléverse une image vers Catbox et obtient l'URL",
