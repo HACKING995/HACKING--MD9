@@ -3,29 +3,32 @@ const axios = require("axios");
 
 zokou({
   nomCom: "url4",
-  categorie: "FAMOUS-TECH",
+  categorie: "Conversion",
   reaction: "🌐",
-  desc: "Téléverse une image vers Catbox et obtient l'URL",
+  desc: "Téléverse une image, vidéo ou sticker vers Catbox et obtient l'URL.",
   alias: ["up"]
 }, async (origineMessage, zk, commandeOptions) => {
-  const { ms, msgRepondu, arg, repondre, nomAuteurMessage } = commandeOptions;
+  const { repondre, msgRepondu } = commandeOptions;
 
-  if (!arg[0]) {
-    return repondre("Veuillez fournir une URL d'image.");
+  // Vérifiez si le message contient une pièce jointe (image, vidéo, sticker)
+  const attachment = msgRepondu.attachments[0];
+
+  if (!attachment) {
+    return repondre("Veuillez fournir une image, vidéo ou sticker.");
   }
 
-  const imageUrl = arg[0];
+  const fileUrl = attachment.url;
 
   try {
     const response = await axios.post("https://catbox.moe/user/api.php", {
-      fileToUpload: imageUrl,
+      fileToUpload: fileUrl,
       reqtype: "urlupload"
     });
 
     const uploadedImageUrl = response.data;
-    repondre(`Voici l'URL de votre image téléversée : ${uploadedImageUrl}`);
+    repondre(`Voici l'URL de votre fichier téléversé : ${uploadedImageUrl}`);
   } catch (error) {
-    console.error("Erreur lors du téléversement de l'image :", error);
-    repondre("Échec du téléversement de l'image. Veuillez réessayer.");
+    console.error("Erreur lors du téléversement du fichier :", error);
+    repondre("Échec du téléversement du fichier. Veuillez réessayer.");
   }
 });
