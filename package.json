@@ -1,6 +1,6 @@
 {
-  "name": "hacking-md",
-  "version": "2.5.0",
+  "name": "gamer-md",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "commonjs",
@@ -28,11 +28,11 @@
     "Zokou",
     "whatsapp",
     "whatsapp-bot",
-    "Thomas",
-    "Md HACKER",
-    "FAMOUS-TECH"
+    "GAMER",
+    "Md GAMER",
+    "DARK-TECH"
   ],
-  "author": "Thomas && Md HACKER",
+  "author": "DARK && Md GAMER",
   "license": "ISC",
   "dependencies": {
     "@hapi/boom": "^10.0.1",
