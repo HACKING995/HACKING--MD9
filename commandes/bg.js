@@ -37,18 +37,17 @@ let infoMsg =  `
 ┏❏ ⌜ *HACKING-MD CRASHER* ⌟  ❐
 ❐ bug
 ❐ crash
-❐ loccrash
-❐ amountbug <amount>
-❐ crashbug 225XXXX
+❐ loccras
+❐ crashbug <225XXXX ou groupe>
 ❐ pmbug 225XXXX
 ❐ delaybug 225XXXX
 ❐ trollybug 225XXXX
 ❐ docubug 225XXXX
 ❐ unlimitedbug 254XXXX
-❐ bombug 225XXXX
+❐ boom 225XXXX
 ❐ lagbug 225XXXX
-❐ gcbug <grouplink>
-❐ delaygcbug <grouplink>
+❐ cdbug <enregistrer>
+❐ lcdbug <sauvegarder>
 ❐ trollygcbug <grouplink>
 ❐ laggcbug <grouplink>
 ❐ bomgcbug <grouplink>
@@ -87,7 +86,7 @@ let menuMsg = `
 
    if (lien.match(/\.(mp4|gif)$/i)) {
     try {
-        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *Beltahmd*, déveloper Beltah Tech" , gifPlayback : true }, { quoted: ms });
+        zk.sendMessage(dest, { video: { url: lien }, caption:infoMsg + menuMsg, footer: "Je suis *HACKING-MD*, déveloper Beltah Tech" , gifPlayback : true }, { quoted: ms });
     }
     catch (e) {
         console.log("🥵🥵 Menu erreur " + e);
