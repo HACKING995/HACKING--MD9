@@ -215,7 +215,9 @@ Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer v
 
 ## Développeurs :
 
-<img alt="HACKING-MD" width="700" height="300" src="https://iili.io/2IycfGS.jpg">
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=721c24&center=true&width=910&height=100&lines=HACKING LE ROBOT+RÉVOLUTIONNE;MULTI+SERVICE+WHATSAPP+BOT;CRÉER+PAR+THOMAS+TECH;BOT DATÉE+06.6.2024" alt="Typing SVG" /></a>
+  </p>
+    <img alt="HACKING-MD" width="700" height="300" src=" https://iili.io/2IycfGS.jpg ">
 <p align="center">
 <p align="center">
 
