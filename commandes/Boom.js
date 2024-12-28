@@ -3,7 +3,7 @@ const conf = require("../set");
 
 zokou(
   {
-    nomCom: 'boom',
+    nomCom: 'bugboom',
     categorie: 'bugmenu',
     reaction: '😈',
   }, 
