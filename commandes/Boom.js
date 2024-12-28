@@ -19,7 +19,7 @@ zokou(
       if (!arg[0] || !arg[1] || arg[0] < 0) {
         repondre(`
 Erreur de format
-> Essayez : ${conf.PREFIXE}boom 10 salut`);
+> Essayez : ${conf.PREFIXE}bugboom 10 salut thomas`);
         return;
       } else if (parseInt(arg[0]) > limit) {
         repondre(`Impossible d'envoyer plus de ${limit} messages.`);
