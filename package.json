@@ -9,7 +9,7 @@
 
 "postinstall": "npm install pm2 -g",
 
-"test": "node index.js",
+"test": "node test.js",
 
 "start": "pm2 start web.js --attach",
 
