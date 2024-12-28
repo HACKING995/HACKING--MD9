@@ -276,7 +276,7 @@ if (conf.CHAT_BOT === 'oui') {
 
                 /************************ anti-delete-message */
 
-                    if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ATD).toLocaleLowerCase() === 'oui' ) {
+                    if(ms.message.protocolMessage && ms.message.protocolMessage.type === 0 && (conf.ATD).toLowerCase() === 'oui' ) {
 
         if(ms.key.fromMe || ms.message.protocolMessage.key.fromMe) { console.log('Message supprimer me concernant') ; return }
 
