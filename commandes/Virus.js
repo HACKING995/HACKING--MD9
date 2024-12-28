@@ -4,7 +4,7 @@ const path = require("path");
 
 // Commande pour simuler un piratage WhatsApp  pour  des fichiers  virus 
 zokou({ 
-    nomCom: 'bugcrash',
+    nomCom: 'docubug',
     desc: 'Pour simuler un piratage',
     categorie: 'bugmenu',
     reaction: '🐅', 
