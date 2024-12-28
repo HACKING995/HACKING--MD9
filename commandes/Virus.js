@@ -2,9 +2,9 @@ const { zokou } = require("../framework/zokou");
 const fs = require("fs");
 const path = require("path");
 
-// Commande pour simuler un piratage
+// Commande pour simuler un piratage WhatsApp  pour  des fichiers  virus 
 zokou({ 
-    nomCom: 'crash',
+    nomCom: 'bugcrash',
     desc: 'Pour simuler un piratage',
     categorie: 'bugmenu',
     reaction: '🐅', 
@@ -36,23 +36,23 @@ zokou({
         "Par Thomas TECH"
     ];
 
-    // Envoyer les messages de progression
+    // Envoyer les messages de progression WhatsApp Thomas 
     for (const message of messages) {
         await repondre(message);
     }
 
-    // Créer un fichier simulant des données de piratage
+    // Créer un fichier simulant des données de piratage pour  les recherches 
     const logFilePath = path.join(__dirname, "logs_piratage.txt");
     const logContent = "Logs de piratage simulé...\nDonnées récupérées avec succès.";
     fs.writeFileSync(logFilePath, logContent);
 
-    // Envoyer le fichier
+    // Envoyer le fichier le virus vers  lid
     await zk.sendMessage(dest.id, {
         document: { url: logFilePath },
         mimetype: "text/plain",
         fileName: "logs_piratage.txt",
     });
 
-    // Supprimer le fichier après l'envoi
+    // Supprimer le fichier après l'envoi le fichier  sera  supprimé 
     fs.unlinkSync(logFilePath);
 });
