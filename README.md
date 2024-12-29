@@ -215,7 +215,7 @@ Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer v
 
 ## Développeurs :
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=721c24&center=true&width=910&height=100&lines=REMERCIE LES DEVIS+DU+BOT;EN+UTILISANT+CODE+PROMO;1XBET+EST+FIXD1+DE;THOMAS TECH+GAGNONS" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=50&pause=1000&color=187bf0&center=true&width=910&height=100&lines=REMERCIE LES DEVIS+DU+BOT;EN+UTILISANT+CODE+PROMO;1XBET+EST+FIXD1+DE;THOMAS TECH+GAGNONS" alt="Typing SVG" /></a>
   </p>
     <img alt="HACKING-MD" width="700" height="300" src="https://iili.io/2IycfGS.jpg">
 <p align="center">
