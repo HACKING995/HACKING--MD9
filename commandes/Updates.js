@@ -3,6 +3,7 @@ const axios = require("axios");
 const fs = require("fs");
 const path = require("path");
 const { exec } = require("child_process");
+const crypto = require('crypto');
 
 zokou({
   nomCom: "update",
@@ -12,62 +13,124 @@ zokou({
   alias: ["upgrade"]
 }, async (origineMessage, zk, commandeOptions) => {
   const { ms, msgRepondu, arg, repondre, nomAuteurMessage } = commandeOptions;
-
+  
   zk.sendMessage(origineMessage, { text: "*COMMANDE DEVELOPPÉ Par FAMOUS-TECH, un développeur HAÏTIEN🇭🇹*" });
-
+  
   try {
     const repoUrl = "https://api.github.com/repos/HACKING995/HACKING--MD9";
-    const commitsUrl = `${repoUrl}/commits`;
-
-    // Cette partie cherche les commits
-    const commitsResponse = await axios.get(commitsUrl);
-    const latestCommit = commitsResponse.data[0];
-
-    // Cette partie cherche les informations du dernier commit sur ton repo
-    const commitDetailsUrl = latestCommit.url;
-    const commitDetailsResponse = await axios.get(commitDetailsUrl);
-    const filesChanged = commitDetailsResponse.data.files;
-
-    // Là ça cherche s’il y a des fichiers modifiés
-    const localFiles = getLocalFiles(".");
-    const filesToUpdate = filesChanged.filter(file => localFiles.includes(file.filename));
-
+    const branchesUrl = `${repoUrl}/branches/main`;
+    
+    // Get the latest commit hash from the repository
+    const branchResponse = await axios.get(branchesUrl);
+    const latestCommitHash = branchResponse.data.commit.sha;
+    
+    // Get repository content tree
+    const treeUrl = `${repoUrl}/git/trees/${latestCommitHash}?recursive=1`;
+    const treeResponse = await axios.get(treeUrl);
+    const repoFiles = treeResponse.data.tree;
+    
+    // Get local files with their hashes
+    const localFiles = await getLocalFilesWithHash(".");
+    
+    // Compare files and identify differences
+    const filesToUpdate = [];
+    for (const repoFile of repoFiles) {
+      if (repoFile.type !== "blob") continue;
+      
+      const localFilePath = repoFile.path;
+      const localFileInfo = localFiles.get(localFilePath);
+      
+      if (!localFileInfo || localFileInfo.hash !== repoFile.sha) {
+        filesToUpdate.push(repoFile);
+      }
+    }
+    
     if (filesToUpdate.length === 0) {
-      return repondre("Pas de mise à jour détecté pour le moment.");
+      return repondre("Pas de mise à jour détectée pour le moment.");
     }
-
-    repondre(`Mise à jour nécessaire pour les(s) fichiers : ${filesToUpdate.map(file => file.filename).join(", ")}`);
-
+    
+    repondre(`Mise à jour nécessaire pour ${filesToUpdate.length} fichier(s): ${filesToUpdate.map(f => f.path).join(", ")}`);
+    
+    // Update files
     for (const file of filesToUpdate) {
-      const fileUrl = file.raw_url;
-      const filePath = path.join(".", file.filename);
-
-      const fileResponse = await axios.get(fileUrl, { responseType: "arraybuffer" });
-      fs.writeFileSync(filePath, fileResponse.data);
-
-      repondre(`Fichier mis à jour : ${file.filename}`);
+      try {
+        const fileUrl = `${repoUrl}/contents/${file.path}?ref=${latestCommitHash}`;
+        const fileResponse = await axios.get(fileUrl);
+        const content = Buffer.from(fileResponse.data.content, 'base64');
+        
+        // Ensure directory exists
+        const filePath = path.join(".", file.path);
+        const fileDir = path.dirname(filePath);
+        if (!fs.existsSync(fileDir)) {
+          fs.mkdirSync(fileDir, { recursive: true });
+        }
+        
+        // Write file
+        fs.writeFileSync(filePath, content);
+        repondre(`Fichier mis à jour: ${file.path}`);
+      } catch (error) {
+        repondre(`Erreur lors de la mise à jour de ${file.path}: ${error.message}`);
+      }
     }
-
-    repondre("Mise à jour Terminé avec succès.");
+    
+    repondre("Mise à jour terminée avec succès.");
+    
+    // Redémarrage avec PM2
+    if (filesToUpdate.some(file => file.path.endsWith('.js'))) {
+      repondre("Redémarrage du bot pour appliquer les mises à jour...");
+      exec('pm2 restart all', (error, stdout, stderr) => {
+        if (error) {
+          repondre(`Erreur lors du redémarrage: ${error.message}`);
+          return;
+        }
+        if (stderr) {
+          repondre(`Avertissement lors du redémarrage: ${stderr}`);
+          return;
+        }
+        repondre("Bot redémarré avec succès!");
+      });
+    }
+    
   } catch (error) {
-    repondre(`Error during update: ${error.message}`);
+    repondre(`Erreur pendant la mise à jour: ${error.message}`);
   }
 });
 
-function getLocalFiles(dir) {
-  let files = [];
-  const items = fs.readdirSync(dir);
-
-  for (const item of items) {
-    const itemPath = path.join(dir, item);
-    const stat = fs.statSync(itemPath);
-
-    if (stat.isDirectory()) {
-      files = files.concat(getLocalFiles(itemPath).map(file => path.join(item, file)));
-    } else {
-      files.push(itemPath);
+// Helper function to get local files with their SHA-1 hashes
+async function getLocalFilesWithHash(dir) {
+  const files = new Map();
+  
+  function processDirectory(currentDir) {
+    const items = fs.readdirSync(currentDir);
+    
+    for (const item of items) {
+      const itemPath = path.join(currentDir, item);
+      const stat = fs.statSync(itemPath);
+      
+      // Skip node_modules and .git directories
+      if (stat.isDirectory()) {
+        if (item !== 'node_modules' && item !== '.git') {
+          processDirectory(itemPath);
+        }
+        continue;
+      }
+      
+      // Calculate file hash
+      const fileContent = fs.readFileSync(itemPath);
+      const hash = crypto.createHash('sha1')
+        .update(`blob ${fileContent.length}\0`)
+        .update(fileContent)
+        .digest('hex');
+      
+      // Store relative path and hash
+      const relativePath = path.relative('.', itemPath);
+      files.set(relativePath, {
+        path: relativePath,
+        hash: hash
+      });
     }
   }
-
+  
+  processDirectory(dir);
   return files;
 }
