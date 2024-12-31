@@ -101,7 +101,7 @@
 
 1.  inscrivez  vous  si tu n'as pas  un compte
 
-2.  cliquez [**ici  pour créer compte talkdrove**](https://host.talkdrove.com/signup?ref=HR99E1G1)
+2.  cliquez [**ici  pour créer compte talkdrove**](https://talkdrove.com/auth/signup?ref=F492E352)
 
 3. UTILISER le DATABASE_URL ou url de base de données suivant : 
  ``postgresql://thomas_nse0_user:DNcjvbg1wtgeAW8hPvxLwUIEYTOTgbZe@dpg-cse5hcjtq21c73850jvg-a.oregon-postgres.render.com/thomas_nse0``
@@ -110,7 +110,7 @@
 
 
 
- 5.  cliquez [**ici  pour deployer  sur talkdrove**](https://host.talkdrove.com/signup?ref=5R9956JB) c'est  gratuit  et votre bot restera actif 24h/7
+ 5.  cliquez [**ici  pour deployer  sur talkdrove**](https://talkdrove.com/auth/signup?ref=F492E352) c'est  gratuit  et votre bot restera actif 24h/7
 
 
 
