@@ -10,7 +10,7 @@
     "PREFIXE":
     {
       "description":"choisissez votre préfixe",
-      "value":"@",
+      "value":".",
       "required":true
     },
     "LECTURE_AUTO_STATUS":
@@ -87,7 +87,7 @@
     
     "description": "Votre numero de telephone; il doit etre dans le format ID+numero",
     "required":false,
-    "value": "22545065189"
+    "value": "2250705607226"
   },
     
 
