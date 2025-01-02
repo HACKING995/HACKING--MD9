@@ -89,7 +89,14 @@
     "required":false,
     "value": "2250705607226"
   },
-    
+
+
+ "CODE_PAYS":
+	  {
+    "description": "Votre code pays; il doit etre dans le format +225",
+    "required":false,
+    "value": "+225"
+  },
 
     "WARN_COUNT":
   {
