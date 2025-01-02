@@ -93,9 +93,9 @@
 
  "CODE_PAYS":
 	  {
-    "description": "Votre code pays; il doit etre dans le format +225",
+    "description": "Votre code pays; il doit etre dans le format 225",
     "required":false,
-    "value": "+225"
+    "value": "225"
   },
 
     "WARN_COUNT":
