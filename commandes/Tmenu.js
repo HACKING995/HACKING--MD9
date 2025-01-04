@@ -151,7 +151,8 @@ ${readmore}`;
     }
 });
 
-// Fonction pour attribuer des émojis aux catégories
+// Fonction pour attribuer des émojis aux catégories 
+// New MENU BY FAMOUS-TECH 
 function getCategoryEmoji(category) {
     const emojis = {
         'general': '🎯',
@@ -172,8 +173,17 @@ function getCategoryEmoji(category) {
         'modération': '🛡️',
         'économie': '💰',
         'info': 'ℹ️',
-        'divers': '📦'
+        'divers': '📦',
+        'éditeurs d’images': '🖼️',
+        'download': '📥',
+        'famous-tech': '🌟',
+        'games': '🎮',
+        'hentai': '🍑',
+        'heroku': '🛠️',
+        'ia': '🤖',
+        'logo': '🖌️',
+        'mods': '🔧'
     };
     
     return emojis[category.toLowerCase()] || '📱';
-       }
+}
