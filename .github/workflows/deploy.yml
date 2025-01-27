@@ -17,3 +17,52 @@ HEROKU=non
 DATABASE_URL=postgresql://hackingwabot_user:V7Voc3RHXN9aVjGCRVkI8FeKX84GGNqg@dpg-cto45q3tq21c73crahmg-a.oregon-postgres.render.com/hackingwabot
 ANTI_COMMAND_SPAM=non
 CODE_PAYS=509
+name: Node.js CI
+
+on:
+
+push:
+
+branches:
+
+- main
+
+pull_request:
+
+branches:
+
+- main
+
+jobs:
+
+build:
+
+runs-on: ubuntu-latest
+
+strategy:
+
+matrix:
+
+node-version: [20.x]
+
+steps:
+
+- name: Checkout repository
+
+uses: actions/checkout@v3
+
+- name: Set up Node.js
+
+uses: actions/setup-node@v3
+
+with:
+
+node-version: ${{ matrix.node-version }}
+
+- name: Install dependencies
+
+run: npm install
+
+- name: Start application
+
+run: npm start
