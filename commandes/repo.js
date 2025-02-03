@@ -2,7 +2,7 @@ const { zokou } = require("../framework/zokou");
 const { getytlink, ytdwn } = require("../framework/ytdl-core");
 const yts = require("yt-search");
 const BaseUrl = 'https://api.giftedtech.my.id';
-const giftedapikey = 'gifted-md';
+const giftedapikey = 'gifted';
 const fs = require('fs');
 
 zokou({
