@@ -21,4 +21,5 @@ COPY . .
 
 EXPOSE 8000
 
-CMD ["npm","run","web"]
+CMD ["pm2-runtime", "start", "ecosystem.config.js"]
+
