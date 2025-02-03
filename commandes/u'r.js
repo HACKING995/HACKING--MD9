@@ -34,7 +34,7 @@ async function uploadMedia(buffer) {
 
 // hansurl command function to handle media upload via zokou
 zokou({
-  nomCom: "anywayurl", // Command name
+  nomCom: "wayurl", // Command name
   reaction: "👊", 
   nomFichier: __filename 
 }, async (dest, zk, commandeOptions) => {
