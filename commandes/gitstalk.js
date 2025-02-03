@@ -1,8 +1,9 @@
 const axios = require('axios');
+const { zokou } = require("../framework/zokou"); 
 
 zokou({
-  nomCom: "gitstalk",
-  categorie: "Coders",
+  nomCom: "gits",
+  categorie: "THOMAS",
   reaction: "👤"
 }, async (origineMessage, zk, commandeOptions) => {
   const { arg, repondre } = commandeOptions;
