@@ -1,7 +1,7 @@
 const { zokou } = require("../framework/zokou");
 const axios = require("axios");
 
-zokou({ nomCom: "gpt", reaction: "🌐", categorie: "IA" }, async (dest, zk, commandeOptions) => {
+zokou({ nomCom: "gpt5", reaction: "🌐", categorie: "IA" }, async (dest, zk, commandeOptions) => {
   const { repondre, arg, ms } = commandeOptions;
 
   try {
