@@ -4,7 +4,7 @@ const fs = require("fs");
 const path = require("path");
 
 zokou({
-  nomCom: "site-screenshot",
+  nomCom: "capture",
   categorie: "FAMOUS-TECH🇭🇹",
   reaction: "📸",
   desc: "Faire le screenshot du site voulu",
