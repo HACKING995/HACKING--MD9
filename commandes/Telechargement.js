@@ -1,5 +1,5 @@
 const { zokou } = require("../framework/zokou");
-const { fbdl, ttdl, igdl, twitterdl, ytdl } = require("../framework/dl");
+const { fbdl, ttdl, ytdl } = require("../framework/dl");
 const ytsr = require('@distube/ytsr');
 const axios = require('axios');
 
@@ -21,7 +21,7 @@ async function sendMedia(dest, zk, url, format, type) {
         const message = {
             [type]: Buffer.from(media.data),
             mimetype: format === "ogg" ? "audio/mpeg" : "video/mp4",
-            caption: `\`\`\`Powered By HACKING-MD `\`\``,
+            caption: `\`\`\`Powered By HACKING-MD\`\`\``,
         };
 
         return await zk.sendMessage(dest.id, message);
@@ -35,7 +35,7 @@ async function sendMedia(dest, zk, url, format, type) {
 zokou(
     {
         nomCom: "song",
-        categorie: "Telechargement",
+        categorie: "Téléchargement",
         reaction: "🎵",
         desc: "Télécharge une chanson depuis YouTube avec un terme de recherche",
         alias: ["play"],
@@ -80,7 +80,7 @@ zokou(
 zokou(
     {
         nomCom: "video",
-        categorie: "Telechargement",
+        categorie: "Téléchargement",
         reaction: "🎥",
         desc: "Télécharge une vidéo depuis YouTube avec un terme de recherche",
     },
@@ -128,7 +128,7 @@ zokou(
 zokou(
     {
         nomCom: "fabdl",
-        categorie: "Telechargement",
+        categorie: "Téléchargement",
         reaction: "📥",
         desc: "Télécharge une vidéo depuis Facebook en HD",
     },
@@ -138,7 +138,7 @@ zokou(
         const videoLink = arg.join(" ");
         if (!videoLink) {
             return zk.sendMessage(dest.id, {
-                text: "Veuillez fournir un lien vidéo Facebook, par exemple : fbdl https://www.facebook.com/video-link",
+                text: "Veuillez fournir un lien vidéo Facebook, par exemple : fabdl https://www.facebook.com/video-link",
             });
         }
 
@@ -159,7 +159,7 @@ zokou(
 zokou(
     {
         nomCom: "tikdl2",
-        categorie: "Telechargement",
+        categorie: "Téléchargement",
         reaction: "📥",
         desc: "Télécharge une vidéo depuis TikTok",
     },
@@ -169,7 +169,7 @@ zokou(
         const videoLink = arg.join(" ");
         if (!videoLink) {
             return zk.sendMessage(dest.id, {
-                text: "Veuillez fournir un lien vidéo TikTok, par exemple : ttdl https://vm.tiktok.com/ZMkr2TbuQ/",
+                text: "Veuillez fournir un lien vidéo TikTok, par exemple : tikdl2 https://vm.tiktok.com/ZMkr2TbuQ/",
             });
         }
 
