@@ -60,7 +60,7 @@ zokou(
 // Commande DALL-E
 zokou(
     {
-        nomCom: "dalle2",
+        nomCom: "dalle",
         categorie: "IA",
         reaction: "🎨",
         desc: "Génère des images avec DALLE-E.",
