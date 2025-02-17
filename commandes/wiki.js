@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const { zokou } = require("../framework/zokou");
-const axios = require('axios');
-const cheerio = require('cheerio');
+const wikipedia = require('wikipedia');
 
 zokou({
   nomCom: "wiki",
@@ -40,18 +39,15 @@ zokou({
 
 async function giftedWikipedia(query) {
     try {
-        const q = query.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('_');
+        const page = await wikipedia.page(query);
+        const summary = await page.summary();
         
-        const { data } = await axios.get(`https://en.m.wikipedia.org/wiki/${q}`);
-        const $ = cheerio.load(data);
-        
-        const result = {
-            title: $('h1[id="firstHeading"]').text().trim(),
-            desc: $('.mf-section-0 p').text().trim().replace(/\[.*?\]/g, '')
+        return {
+            title: summary.title,
+            desc: summary.extract,
         };
-        return result;
     } catch (error) {
-        console.error(error.response ? error.response.data : error.message);
+        console.error(error.message);
         return null; // Retourner null en cas d'erreur
     }
 }
