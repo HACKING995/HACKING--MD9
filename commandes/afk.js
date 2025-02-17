@@ -13,7 +13,7 @@ zokou(
         const { arg, ms } = commandeOptions;
 
         if (!arg.length) {
-            return zk.sendMessage(dest.id, { text: "Veuillez entrer un texte ou une question." }, { quoted: ms });
+            return zk.sendMessage(dest.id, { text: "Veuillez entrer un texte ou une description." }, { quoted: ms });
         }
 
         const prompt = arg.join(" ");
@@ -25,6 +25,8 @@ zokou(
                 prompt: "Répondre à l'utilisateur.",
                 model: "GPT-4",
                 markdown: false,
+            }, {
+                headers: { 'Content-Type': 'application/json' }
             });
 
             const id = result.data.id;
@@ -51,7 +53,7 @@ zokou(
                 }
             }
         } catch (error) {
-            console.error("Erreur GPT :", error);
+            console.error("Erreur :", error);
             return zk.sendMessage(dest.id, { text: "Une erreur est survenue lors de l'appel à l'API." }, { quoted: ms });
         }
     }
@@ -78,7 +80,9 @@ zokou(
         try {
             const result = await axios.post(apiUrl, {
                 prompt: prompt,
-                model: "dalle2",
+                model: "dalle2"
+            }, {
+                headers: { 'Content-Type': 'application/json' }
             });
 
             const id = result.data.id;
@@ -105,7 +109,7 @@ zokou(
                 }
             }
         } catch (error) {
-            console.error("Erreur DALL-E :", error);
+            console.error("Erreur :", error);
             return zk.sendMessage(dest.id, { text: "Une erreur est survenue lors de l'appel à l'API." }, { quoted: ms });
         }
     }
@@ -135,7 +139,9 @@ zokou(
                 conversation_style: "Balanced",
                 markdown: false,
                 stream: false,
-                model: "Bing",
+                model: "Bing"
+            }, {
+                headers: { 'Content-Type': 'application/json' }
             });
 
             const id = result.data.id;
@@ -162,7 +168,67 @@ zokou(
                 }
             }
         } catch (error) {
-            console.error("Erreur Bing :", error);
+            console.error("Erreur :", error);
+            return zk.sendMessage(dest.id, { text: "Une erreur est survenue lors de l'appel à l'API." }, { quoted: ms });
+        }
+    }
+);
+
+// Commande Blackbox
+zokou(
+    {
+        nomCom: "blackbox",
+        categorie: "IA",
+        reaction: "🖤",
+        desc: "Utilise Blackbox pour répondre aux questions.",
+    },
+    async (dest, zk, commandeOptions) => {
+        const { arg, ms } = commandeOptions;
+
+        if (!arg.length) {
+            return zk.sendMessage(dest.id, { text: "Veuillez entrer un texte ou une question." }, { quoted: ms });
+        }
+
+        const prompt = arg.join(" ");
+        const apiUrl = "https://nexra.aryahcr.cc/api/chat/complements";
+
+        try {
+            const result = await axios.post(apiUrl, {
+                messages: [{ role: "user", content: prompt }],
+                prompt: "Répondre à l'utilisateur.",
+                websearch: false,
+                stream: false,
+                markdown: false,
+                model: "blackbox"
+            }, {
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            const id = result.data.id;
+            let response = null;
+            let data = true;
+
+            while (data) {
+                response = await axios.get(`https://nexra.aryahcr.cc/api/chat/task/${encodeURIComponent(id)}`);
+                response = response.data;
+
+                switch (response.status) {
+                    case "pending":
+                        data = true;
+                        break;
+                    case "error":
+                        data = false;
+                        return zk.sendMessage(dest.id, { text: "Une erreur est survenue lors du traitement de la requête." }, { quoted: ms });
+                    case "completed":
+                        data = false;
+                        return zk.sendMessage(dest.id, { text: response.message || "Aucune réponse générée." }, { quoted: ms });
+                    case "not_found":
+                        data = false;
+                        return zk.sendMessage(dest.id, { text: "Tâche introuvable. Veuillez réessayer." }, { quoted: ms });
+                }
+            }
+        } catch (error) {
+            console.error("Erreur :", error);
             return zk.sendMessage(dest.id, { text: "Une erreur est survenue lors de l'appel à l'API." }, { quoted: ms });
         }
     }
@@ -190,11 +256,13 @@ zokou(
             const result = await axios.post(apiUrl, {
                 messages: [
                     { role: "assistant", content: "" },
-                    { role: "user", content: prompt },
+                    { role: "user", content: prompt }
                 ],
                 markdown: false,
                 stream: false,
-                model: "gemini-pro",
+                model: "gemini-pro"
+            }, {
+                headers: { 'Content-Type': 'application/json' }
             });
 
             const id = result.data.id;
@@ -221,7 +289,7 @@ zokou(
                 }
             }
         } catch (error) {
-            console.error("Erreur Gemini-Pro :", error);
+            console.error("Erreur :", error);
             return zk.sendMessage(dest.id, { text: "Une erreur est survenue lors de l'appel à l'API." }, { quoted: ms });
         }
     }
