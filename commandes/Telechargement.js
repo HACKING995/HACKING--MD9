@@ -21,7 +21,7 @@ async function sendMedia(dest, zk, url, format, type) {
         const message = {
             [type]: Buffer.from(media.data),
             mimetype: format === "ogg" ? "audio/mpeg" : "video/mp4",
-            caption: `\`\`\`Powered By Zokou\`\`\``,
+            caption: `\`\`\`Powered By HACKING-MD `\`\``,
         };
 
         return await zk.sendMessage(dest.id, message);
