@@ -4,24 +4,14 @@
   "description": "",
   "main": "index.js",
   "type": "commonjs",
-
-"scripts": {
-
-"postinstall": "npm install pm2 -g",
-
-"test": "node test.js",
-
-"start": "pm2 start test.js --attach",
-
-"zokou": "pm2 start index.js --attach",
-
-"web": "pm2 start web.js --attach",
-
-"c": "tsc"
-
-},
-  
-  
+  "scripts": {
+    "postinstall": "npm install pm2 -g",
+    "test": "node test.js",
+    "start": "pm2 start test.js --attach",
+    "zokou": "pm2 start index.js --attach",
+    "web": "pm2 start web.js --attach",
+    "c": "tsc"
+  },
   "keywords": [
     "bot",
     "Baileys",
@@ -80,7 +70,7 @@
     "types": "^0.1.1",
     "puppeteer": "^19.0.0",
     "typescript": "^5.1.6",
-    "wikipedia": "^2.1.1"
+    "wikipedia": "^2.1.1",
     "wa-sticker-formatter": "^4.4.4",
     "youtube-yts": "^2.0.0",
     "youtubedl-core": "^4.11.7",
