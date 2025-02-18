@@ -31,6 +31,60 @@ async function sendMedia(dest, zk, url, format, type) {
     }
 }
 
+
+// Commande pour télécharger une chanson via YouTube
+zokou(
+    {
+        nomCom: "play",
+        categorie: "Téléchargement",
+        reaction: "🎵",
+        desc: "Télécharge une chanson depuis YouTube avec un terme de recherche",
+        alias: ["play"],
+    },
+    async (dest, zk, commandeOptions) => {
+        const { arg } = commandeOptions;
+        if (!arg.length) {
+            return await zk.sendMessage(dest.id, {
+                text: "Veuillez spécifier un titre de chanson ou un lien YouTube.",
+            });
+        }
+
+        const query = arg.join(" ");
+        try {
+            const searchResults = await ytsr(query, { limit: 1 });
+            if (searchResults.items.length === 0) {
+                return await zk.sendMessage(dest.id, { text: "Aucun résultat trouvé." });
+            }
+
+            const song = searchResults.items[0];
+            const videoInfo = {
+                url: song.url,
+                title: song.name,
+                views: song.views,
+                duration: song.duration,
+                thumbnail: song.thumbnail,
+            };
+
+            const caption = `╭─── 〔 HACKING-MD PLAYLIST 〕 ──⬣\n⬡ Titre: ${videoInfo.title}\n⬡ URL: ${videoInfo.url}\n⬡ Vues: ${videoInfo.views}\n⬡ Durée: ${videoInfo.duration}\n╰───────────────────⬣`;
+
+            await zk.sendMessage(dest.id, { image: { url: videoInfo.thumbnail }, caption });
+
+            await sendMedia(dest, zk, videoInfo.url, "ogg", "audio");
+        } catch (error) {
+            console.error("Erreur Song Downloader:", error.message);
+            await zk.sendMessage(dest.id, { text: "Erreur lors du téléchargement." });
+        }
+    }
+);
+
+
+
+
+
+
+
+
+
 // Commande pour télécharger une chanson via YouTube
 zokou(
     {
