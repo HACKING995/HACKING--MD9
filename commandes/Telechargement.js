@@ -34,7 +34,7 @@ async function sendMedia(origineMessage, zk, url, format, type) {
 
 
 
-   zokou({ nomCom: "play",
+   zokou({ nomCom: "song",
     categorie: "Téléchargement",
     reaction: "🎵",
     desc: "Télécharge une chanson depuis YouTube avec un terme de recherche",
