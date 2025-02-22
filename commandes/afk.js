@@ -2,6 +2,7 @@ const { zokou } = require("../framework/zokou");
 const axios = require("axios");
 
 // Commande GPT
+
 zokou(
     {
         nomCom: "gpt",
@@ -10,7 +11,7 @@ zokou(
         desc: "Utilise GPT-4 pour répondre à des questions",
     },
     async (dest, zk, commandeOptions) => {
-        const { repondre, arg, ms } = commandeOptions;
+        const { repondre, arg } = commandeOptions;
 
         if (!arg.length) {
             return repondre("Veuillez entrer un texte ou une description.");
@@ -18,6 +19,7 @@ zokou(
 
         const prompt = arg.join(" ");
         const apiUrl = "https://nexra.aryahcr.cc/api/chat/gpt";
+        console.log("Prompt envoyé :", prompt); // Log du prompt
 
         try {
             const result = await axios.post(apiUrl, {
@@ -27,6 +29,8 @@ zokou(
             }, {
                 headers: { 'Content-Type': 'application/json' }
             });
+
+            console.log("Résultat de l'API :", result.data); // Log de la réponse
 
             const id = result.data.id;
             let response;
@@ -50,6 +54,16 @@ zokou(
         }
     }
 );
+
+
+
+
+
+
+
+
+
+
 
 // Commande DALL-E
 zokou(
