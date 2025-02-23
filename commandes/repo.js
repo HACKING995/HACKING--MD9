@@ -221,3 +221,94 @@ zokou({
         await zk.sendMessage(origineMessage, { text: `Erreur: ${error.message}` });
     }
 });
+
+// Commande pour télécharger une chanson via un lien YouTube
+zokou({
+    nomCom: "ytmp3",
+    categorie: "Téléchargement",
+    reaction: "🎵",
+    desc: "Télécharge une chanson depuis un lien YouTube",
+}, async (origineMessage, zk, commandeOptions) => {
+    const { arg } = commandeOptions;
+
+    if (!arg.length) {
+        return await zk.sendMessage(origineMessage, {
+            text: "Veuillez spécifier un lien YouTube.",
+        });
+    }
+
+    const url = arg.join(" ");
+    await zk.sendMessage(origineMessage, { text: "Veuillez patienter, je télécharge..." });
+
+    try {
+        await sendMedia(origineMessage, zk, url, "ogg", "audio");
+    } catch (error) {
+        console.error("Erreur lors du téléchargement de la chanson:", error.message);
+        await zk.sendMessage(origineMessage, { text: "Erreur lors du téléchargement." });
+    }
+});
+
+// Commande pour télécharger une vidéo via un lien YouTube
+zokou({
+    nomCom: "ytmp4",
+    categorie: "Téléchargement",
+    reaction: "🎥",
+    desc: "Télécharge une vidéo depuis un lien YouTube",
+}, async (origineMessage, zk, commandeOptions) => {
+    const { arg } = commandeOptions;
+
+    if (!arg.length) {
+        return await zk.sendMessage(origineMessage, {
+            text: "Veuillez spécifier un lien YouTube.",
+        });
+    }
+
+    const url = arg.join(" ");
+    await zk.sendMessage(origineMessage, { text: "Veuillez patienter, je télécharge..." });
+
+    try {
+        await sendMedia(origineMessage, zk, url, "480", "video");
+    } catch (error) {
+        console.error("Erreur lors du téléchargement de la vidéo:", error.message);
+        await zk.sendMessage(origineMessage, { text: "Erreur lors du téléchargement." });
+    }
+});
+
+// Commande pour récupérer les informations des vidéos via une recherche YouTube
+zokou({
+    nomCom: "yts",
+    categorie: "Recherche",
+    reaction: "🔍",
+    desc: "Récupère les informations de vidéos YouTube selon un terme de recherche",
+}, async (origineMessage, zk, commandeOptions) => {
+    const { arg } = commandeOptions;
+
+    if (!arg.length) {
+        return await zk.sendMessage(origineMessage, {
+            text: "Veuillez spécifier un terme de recherche.",
+        });
+    }
+
+    const query = arg.join(" ");
+    await zk.sendMessage(origineMessage, { text: "Veuillez patienter, je recherche..." });
+
+    try {
+        const searchResults = await ytsr(query, { limit: 15 }); // Limite à 15 résultats
+        if (searchResults.items.length === 0) {
+            return await zk.sendMessage(origineMessage, { text: "Aucun résultat trouvé." });
+        }
+
+        let responseMessage = "Voici les résultats de votre recherche :\n\n";
+        searchResults.items.forEach((item, index) => {
+            responseMessage += `**${index + 1}. HACKING-MD ${item.name}**\n`;
+            responseMessage += `➡️ URL: ${item.url}\n`;
+            responseMessage += `➡️ Vues: ${item.views}\n`;
+            responseMessage += `➡️ Durée: ${item.duration}\n\n`;
+        });
+
+        return await zk.sendMessage(origineMessage, { text: responseMessage });
+    } catch (error) {
+        console.error("Erreur lors de la recherche:", error.message);
+        await zk.sendMessage(origineMessage, { text: "Erreur lors de la recherche des vidéos." });
+    }
+});
