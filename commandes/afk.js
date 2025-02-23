@@ -19,7 +19,6 @@ zokou(
 
         const prompt = arg.join(" ");
         const apiUrl = "https://nexra.aryahcr.cc/api/chat/gpt";
-        console.log("Prompt envoyé :", prompt); // Log du prompt
 
         try {
             const result = await axios.post(apiUrl, {
@@ -30,21 +29,25 @@ zokou(
                 headers: { 'Content-Type': 'application/json' }
             });
 
-            console.log("Résultat de l'API :", result.data); // Log de la réponse
-
             const id = result.data.id;
             let response;
+            let data = true;
 
-            while (true) {
+            while (data) {
                 response = await axios.get(`https://nexra.aryahcr.cc/api/chat/task/${encodeURIComponent(id)}`);
-                switch (response.data.status) {
+                response = response.data;
+
+                switch (response.status) {
                     case "pending":
-                        continue;
+                        continue; // Continue to check
                     case "error":
+                        data = false;
                         return repondre("Une erreur est survenue lors du traitement de la requête.");
                     case "completed":
-                        return repondre(response.data.message || "Aucune réponse générée.");
+                        data = false;
+                        return repondre(response.gpt || "Aucune réponse générée."); // Vérifie si c'est response.gpt
                     case "not_found":
+                        data = false;
                         return repondre("Tâche introuvable. Veuillez réessayer.");
                 }
             }
@@ -54,6 +57,7 @@ zokou(
         }
     }
 );
+
 
 
 
