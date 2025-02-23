@@ -219,7 +219,7 @@ Profitez des fonctionnalités variées du Bot WhatsApp HACKING pour améliorer v
     <img src="https://readme-typing-svg.demolab.com?font=Roboto&size=50&pause=1000&color=FF5733&center=true&width=910&height=250&lines=REMERCIE+LES+DEVIS+DU+BOT;EN+UTILISANT+CODE+PROMO;1XBET+EST+FIXD1+DE;THOMAS+TECH+GAGNONS;Profitez+de+25%+de+réduction+sur+votre+première+commande;Livraison+gratuite+pour+tous+les+achats+supérieurs+à+50€" alt="Typing SVG" />
 </a>
 <img alt="Promo Image" width="700" height="300" src="https://pfst.cf2.poecdn.net/base/image/af9548b1636f2e9ff58397ff4536d1dcaccc28d41d5768291840ee64c2d8cc9b?w=1024&h=768&pmaid=297021070" />
-<p align="center">VEILLEZ ENCOURAGER LE DÉVELOPPEUR THOMAS</p>
+<p align="center">VEILLEZ ENCOURAGER LE DÉVELOPPEUR THOMAS EST FIXD1</p>
 
 
 
