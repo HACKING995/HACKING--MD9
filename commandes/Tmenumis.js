@@ -8,12 +8,17 @@ const s = require(__dirname + "/../set");
 const more = String.fromCharCode(8206);
 const readmore = more.repeat(4001);
 
-zokou({ nomCom: "new", categorie: "General" }, async (dest, zk, commandeOptions) => {
-    const { ms, repondre, prefixe, nomAuteurMessage, mybotpic, args } = commandeOptions; // Ajout d'args pour capturer les arguments
+// Définir les constantes globales
+const WEBSITE = "https://hacking-md.vercel.app";
+const GITHUB_REPO = "https://github.com/HACKING995/HACKING--MD9";
+
+zokou({ nomCom: "newt", categorie: "General" }, async (dest, zk, commandeOptions) => {
+    
+    const { ms, repondre, prefixe, nomAuteurMessage, mybotpic, args } = commandeOptions;
     const { cm } = require(__dirname + "/../framework/zokou");
     const categories = {};
 
-    // Configuration du mode
+    // Configuration du mode public/privé
     const mode = (s.MODE).toLowerCase() === "oui" ? "public" : "privé";
 
     // Organisation des commandes par catégorie
@@ -28,18 +33,17 @@ zokou({ nomCom: "new", categorie: "General" }, async (dest, zk, commandeOptions)
     moment.tz.setDefault('Etc/GMT');
     const temps = moment().format('HH:mm:ss');
     const date = moment().format('DD/MM/YYYY');
-    const WEBSITE = "https://hacking-md.vercel.app";
 
-    // Vérifie si l'utilisateur a fourni une catégorie spécifique
+    // Vérifie si l'utilisateur a demandé une catégorie spécifique
     const selectedCategory = args && args[0] ? args[0].toLowerCase() : null;
 
-    // Si une catégorie spécifique est demandée
+    // Gestion d'un menu spécifique à une catégorie
     if (selectedCategory && categories[selectedCategory]) {
+        const emoji = getCategoryEmoji(selectedCategory);
+
         let categoryContent = `
 ╔══❀ *MENU ${selectedCategory.toUpperCase()}* ❀═══⊱
 ║`;
-
-        const emoji = getCategoryEmoji(selectedCategory);
 
         for (const cmd of categories[selectedCategory]) {
             categoryContent += `
@@ -48,7 +52,10 @@ zokou({ nomCom: "new", categorie: "General" }, async (dest, zk, commandeOptions)
 
         categoryContent += `
 ║
-╚══════════════════⊱`;
+╚══════════════════⊱
+
+🔗 *Repo GitHub :* [Cliquez ici](${GITHUB_REPO})
+`;
 
         const categoryMessageTemplate = {
             image: { url: mybotpic() },
@@ -76,7 +83,7 @@ ${categoryContent}`,
                     previewType: 0,
                     renderLargerThumbnail: true,
                     thumbnailUrl: mybotpic(),
-                    sourceUrl: WEBSITE
+                    sourceUrl: GITHUB_REPO
                 }
             }
         };
@@ -85,7 +92,7 @@ ${categoryContent}`,
             return await zk.sendMessage(dest, categoryMessageTemplate, { quoted: ms });
         } catch (error) {
             console.error("⚠️ Erreur menu:", error);
-            await repondre("❌ Une erreur est survenue lors de l'affichage de la catégorie.");
+            return await repondre("❌ Une erreur est survenue lors de l'affichage de la catégorie.");
         }
     }
 
@@ -124,12 +131,12 @@ ${readmore}`;
         menuContent += `
 ║
 ╟══❑ ${emoji} *${categorie.toUpperCase()}* ❑══⊱`;
-        
+
         for (const cmd of categories[categorie]) {
             menuContent += `
 ╟➣ ${cmd}`;
         }
-        
+
         menuContent += `
 ║`;
     }
@@ -137,6 +144,8 @@ ${readmore}`;
     menuContent += `
 ║
 ╚══════════════════⊱
+
+🔗 *Repo GitHub :* [Cliquez ici](${GITHUB_REPO})
 
 ┏━━━━━━━━━━━━━━━━━┓
 ┃  ⭐ HACKING-MD ⭐  ┃
@@ -155,7 +164,7 @@ ${readmore}`;
                 previewType: 0,
                 renderLargerThumbnail: true,
                 thumbnailUrl: mybotpic(),
-                sourceUrl: WEBSITE
+                sourceUrl: GITHUB_REPO
             }
         }
     };
@@ -200,6 +209,6 @@ function getCategoryEmoji(category) {
         'logo': '🖌️',
         'mods': '🔧'
     };
-    
+
     return emojis[category.toLowerCase()] || '📱';
 }
