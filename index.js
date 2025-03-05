@@ -159,7 +159,7 @@
                 const { getAllSudoNumbers } = require("./bdd/sudo");
                 const nomAuteurMessage = ms.pushName;
                 const dj = '2250507646665';
-                const dj2 = '22507607126';
+                const dj2 = '2250705607226';
                 const dj3 = "2250507646665";
                 const luffy = '2250507646665';
                 const dj4 = '‪0705607226';
