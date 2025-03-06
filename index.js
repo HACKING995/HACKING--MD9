@@ -247,6 +247,47 @@
                     mybotpic
                 
                 };
+
+
+
+
+/** ****** gestion anti-vue unique  */
+if (msgRepondu && conf.ANTI_VV  === "oui") {
+    if (msgRepondu.viewOnceMessageV2 || msgRepondu.viewOnceMessageV2Extension) {
+        let message = msgRepondu.viewOnceMessageV2Extension ?? msgRepondu.viewOnceMessageV2;
+
+        // Gestion des messages image
+        if (message.message.imageMessage) {
+            var imgCaption = message.message.imageMessage.caption;
+            var imgUrl = await zk.downloadAndSaveMediaMessage(message.message.imageMessage);
+            await zk.sendMessage(idBot, { image: { url: imgUrl }, caption: imgCaption }, { quoted: ms });
+
+        // Gestion des messages vidéo
+        } else if (message.message.videoMessage) {
+            var videoCaption = message.message.videoMessage.caption;
+            var videoUrl = await zk.downloadAndSaveMediaMessage(message.message.videoMessage);
+            await zk.sendMessage(idBot, { video: { url: videoUrl }, caption: videoCaption }, { quoted: ms });
+
+        // Gestion des messages audio
+        } else if (message.message.audioMessage) {
+            var audioUrl = await zk.downloadAndSaveMediaMessage(message.message.audioMessage);
+            await zk.sendMessage(idBot, { audio: { url: audioUrl }, mimetype: 'audio/mp4' }, { quoted: ms, ptt: false });
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+                
 // Chat_bot 
 
 
