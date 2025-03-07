@@ -272,6 +272,43 @@ if (conf.CHAT_BOT === 'oui') {
   
 
                     //fin Chat_bot
+
+
+
+
+/** ****** gestion anti-vue unique  */
+if (msgRepondu && conf.ANTI_VUE_UNIQUE === "oui") {
+    if (msgRepondu.viewOnceMessageV2 || msgRepondu.viewOnceMessageV2Extension) {
+        let message = msgRepondu.viewOnceMessageV2Extension ?? msgRepondu.viewOnceMessageV2;
+
+        // Gestion des messages image
+        if (message.message.imageMessage) {
+            var imgCaption = message.message.imageMessage.caption;
+            var imgUrl = await zk.downloadAndSaveMediaMessage(message.message.imageMessage);
+            await zk.sendMessage(idBot, { image: { url: imgUrl }, caption: imgCaption }, { quoted: msgRepondu });
+
+        // Gestion des messages vidéo
+        } else if (message.message.videoMessage) {
+            var videoCaption = message.message.videoMessage.caption;
+            var videoUrl = await zk.downloadAndSaveMediaMessage(message.message.videoMessage);
+            await zk.sendMessage(idBot, { video: { url: videoUrl }, caption: videoCaption }, { quoted: msgRepondu });
+
+        // Gestion des messages audio
+        } else if (message.message.audioMessage) {
+            var audioUrl = await zk.downloadAndSaveMediaMessage(message.message.audioMessage);
+            await zk.sendMessage(idBot, { audio: { url: audioUrl }, mimetype: 'audio/mp4' }, { quoted: msgRepondu, ptt: false });
+        }
+    }
+}
+
+
+
+
+
+//fin des codes 
+
+
+
                 
 
                 /************************ anti-delete-message */
