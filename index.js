@@ -367,7 +367,9 @@ if (conf.CHAT_BOT === 'oui') {
 
 
 
-/** ****** gestion auto-status  */
+
+                
+                    /** ****** gestion auto-status  */
                 if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.LECTURE_AUTO_STATUS === "oui") {
                     await zk.readMessages([ms.key]);
                 }
@@ -392,7 +394,7 @@ if (conf.CHAT_BOT === 'oui') {
                     /** *************** */
                     // console.log("*nouveau status* ");
                 }
-    
+                
 
 
                 
