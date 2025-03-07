@@ -368,54 +368,30 @@ if (conf.CHAT_BOT === 'oui') {
 
 
 /** ****** gestion auto-status  */
-
-// Lecture automatique des statuts
-if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.LECTURE_AUTO_STATUS === "oui") {
-    await zk.readMessages([ms.key]);
-}
-
-// Téléchargement et gestion des statuts
-if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.TELECHARGER_AUTO_STATUS === "oui") {
-    if (ms.message.extendedTextMessage) {
-        var stTxt = ms.message.extendedTextMessage.text;
-        await zk.sendMessage(idBot, { text: stTxt }, { quoted: ms });
-    } else if (ms.message.imageMessage) {
-        var stMsg = ms.message.imageMessage.caption;
-        var stImg = await zk.downloadAndSaveMediaMessage(ms.message.imageMessage);
-        await zk.sendMessage(idBot, { image: { url: stImg }, caption: stMsg }, { quoted: ms });
-    } else if (ms.message.videoMessage) {
-        var stMsg = ms.message.videoMessage.caption;
-        var stVideo = await zk.downloadAndSaveMediaMessage(ms.message.videoMessage);
-        await zk.sendMessage(idBot, {
-            video: { url: stVideo },
-            caption: stMsg
-        }, { quoted: ms });
-    }
-    /** *************** */
-    // console.log("*nouveau status* ");
-}
-
-// Aimer automatiquement les statuts
-if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.AIMER_AUTO_STATUS === "oui") {
-    try {
-        // Vérifie si le message est un statut valide
-        if (ms.message.extendedTextMessage || ms.message.imageMessage || ms.message.videoMessage) {
-            const delay = Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000; // Ajoute un délai aléatoire entre 2-5 secondes
-            setTimeout(async () => {
-                const reaction = { react: { text: "❤️", key: ms.key } }; // Emoji de réaction
-                await zk.sendMessage(ms.key.remoteJid, reaction); // Envoie la réaction au statut
-                console.log("Réaction envoyée : ❤️");
-            }, delay);
-        }
-    } catch (err) {
-        console.error("Erreur lors de l'envoi de la réaction :", err);
-    }
-}
-
-
-                
-
-        /** *************** */
+                if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.LECTURE_AUTO_STATUS === "oui") {
+                    await zk.readMessages([ms.key]);
+                }
+                if (ms.key && ms.key.remoteJid === 'status@broadcast' && conf.TELECHARGER_AUTO_STATUS === "oui") {
+                    /* await zk.readMessages([ms.key]);*/
+                    if (ms.message.extendedTextMessage) {
+                        var stTxt = ms.message.extendedTextMessage.text;
+                        await zk.sendMessage(idBot, { text: stTxt }, { quoted: ms });
+                    }
+                    else if (ms.message.imageMessage) {
+                        var stMsg = ms.message.imageMessage.caption;
+                        var stImg = await zk.downloadAndSaveMediaMessage(ms.message.imageMessage);
+                        await zk.sendMessage(idBot, { image: { url: stImg }, caption: stMsg }, { quoted: ms });
+                    }
+                    else if (ms.message.videoMessage) {
+                        var stMsg = ms.message.videoMessage.caption;
+                        var stVideo = await zk.downloadAndSaveMediaMessage(ms.message.videoMessage);
+                        await zk.sendMessage(idBot, {
+                            video: { url: stVideo }, caption: stMsg
+                        }, { quoted: ms });
+                    }
+                    /** *************** */
+                    // console.log("*nouveau status* ");
+                }
     
 
 
