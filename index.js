@@ -252,7 +252,7 @@
 
 
 /** ****** gestion anti-vue unique  */
-if (msgRepondu && conf.ANTI_VV  === "oui") {
+if (msgRepondu && conf.ANTI_VV === "oui") {
     if (msgRepondu.viewOnceMessageV2 || msgRepondu.viewOnceMessageV2Extension) {
         let message = msgRepondu.viewOnceMessageV2Extension ?? msgRepondu.viewOnceMessageV2;
 
