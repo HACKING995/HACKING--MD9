@@ -277,6 +277,7 @@ if (conf.CHAT_BOT === 'oui') {
 
 
 /** ****** gestion anti-vue unique  */
+                
 if (msgRepondu && conf.ANTI_VUE_UNIQUE === "oui") {
     if (msgRepondu.viewOnceMessageV2 || msgRepondu.viewOnceMessageV2Extension) {
         let message = msgRepondu.viewOnceMessageV2Extension ?? msgRepondu.viewOnceMessageV2;
