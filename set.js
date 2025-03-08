@@ -27,7 +27,7 @@ module.exports = { session: process.env.SESSION_ID || 'zokk',
     DP : process.env.STARTING_BOT_MESSAGE || 'oui',
     CHATBOT : process.env.PM_CHATBOT || "non",     
     ATD : process.env.ANTI_DELETE_MESSAGE || 'non',
-    ANTI_VUE_UNIQUE: process.env.ANTI_VUE_UNIQUE || 'non' ,
+    ANTI_VV: process.env.ANTI_VUE_UNIQUE || 'non' ,
                   
     DATABASE_URL,
     DATABASE: DATABASE_URL === databasePath
