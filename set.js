@@ -14,7 +14,6 @@ module.exports = { session: process.env.SESSION_ID || 'zokk',
     NUMERO_OWNER : process.env.NUMERO_OWNER,              
     LECTURE_AUTO_STATUS: process.env.LECTURE_AUTO_STATUS || "non",
     TELECHARGER_AUTO_STATUS: process.env.TELECHARGER_AUTO_STATUS || 'non',
-    AIMER_AUTO_STATUS: procces.env.AIMER_AUTO_STATUS || "non",
     MODE: process.env.MODE_PUBLIC,
     PM_PERMIT: process.env.PM_PERMIT || 'non', 
     CODE_PAYS: process.env.CODE_PAYS || '509',  // Variable d'environnement pour l'API qu'on utilise       
