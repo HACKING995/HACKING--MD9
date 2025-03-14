@@ -1,28 +1,25 @@
-Gmail: hacking995@gmail.com
-
-name: HACKING-MD 
-
-Document web: https://hacking-md.vercel.app
-
-
-variables 
-
-
-PREFIXE=.
-LECTURE_AUTO_STATUS=oui
-TELECHARGER_AUTO_STATUS=non
-NOM_BOT=HACKING-MD 
-LIENS_MENU=https://telegra.ph/file/7113ddc85a26a69a7a437.jpg
-PM_PERMIT=non
-MODE_PUBLIC=oui
-ETAT=1
-SESSION_ID='hac'
-NOM_OWNER=THOMAS TECH
-NUMERO_OWNER=2250705607226
-WARN_COUNT=3
-STARTING_BOT_MESSAGE=oui
-ANTI_VUE_UNIQUE=oui
-PM_CHATBOT=non
-HEROKU=non
-DATABASE_URL=
-ANTI_COMMAND_SPAM=non
+{
+  "Gmail": "hacking995@gmail.com",
+  "name": "HACKING-MD",
+  "Document web": "https://hacking-md.vercel.app",
+  "variables": {
+    "PREFIXE": ".",
+    "LECTURE_AUTO_STATUS": "oui",
+    "TELECHARGER_AUTO_STATUS": "non",
+    "NOM_BOT": "HACKING-MD",
+    "LIENS_MENU": "https://telegra.ph/file/7113ddc85a26a69a7a437.jpg",
+    "PM_PERMIT": "non",
+    "MODE_PUBLIC": "oui",
+    "ETAT": 1,
+    "SESSION_ID": "'hac'",
+    "NOM_OWNER": "THOMAS TECH",
+    "NUMERO_OWNER": "2250705607226",
+    "WARN_COUNT": 3,
+    "STARTING_BOT_MESSAGE": "oui",
+    "ANTI_VUE_UNIQUE": "oui",
+    "PM_CHATBOT": "non",
+    "HEROKU": "non",
+    "DATABASE_URL": "",
+    "ANTI_COMMAND_SPAM": "non"
+  }
+}
