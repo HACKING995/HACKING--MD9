@@ -1,8 +1,34 @@
 const express = require("express");
+const axios = require("axios");
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Fonction pour s'auto-ping
+function autoPing(server) {
+  setInterval(async () => {
+    try {
+      const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'https'; //It's not an error i'm just a bad coder :XD
+      const selfUrl = `${protocol}://${server}`;
+      
+      const response = await axios.get(selfUrl);
+      console.log(`Auto-ping réussi: ${new Date().toLocaleString()}`);
+      console.log(`Statut: ${response.status}`);
+    } catch (error) {
+      console.error('Échec de l\'auto-ping:', error.message);
+    }
+  }, 60000); // Toutes les minutes (60000 millisecondes)
+}
+
 app.get('/', (req, res) => {
+  // Récupération dynamique de l'host
+  const host = req.get('host');
+  
+  // Lance l'auto-ping si ce n'est pas déjà fait
+  if (!global.autoPingStarted) {
+    autoPing(host);
+    global.autoPingStarted = true;
+  }
+
   res.send(`
     <!DOCTYPE html>
     <html lang="fr">
@@ -138,14 +164,12 @@ app.get('/', (req, res) => {
         </div>
         
         <script>
-            // Mise à jour du timestamp
             function updateTimestamp() {
                 const uptimeElement = document.getElementById('uptime');
                 const now = new Date();
                 uptimeElement.textContent = now.toLocaleString();
             }
             
-            // Mise à jour initiale et toutes les secondes
             updateTimestamp();
             setInterval(updateTimestamp, 1000);
         </script>
