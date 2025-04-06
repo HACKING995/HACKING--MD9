@@ -327,35 +327,32 @@ if (conf.CHAT_BOT === 'oui') {
                        }
                     }
 
-
-                /** ****** gestion auto-status  */
+/** ****** gestion auto-status  */
                 if (ms.key && ms.key.remoteJid === "status@broadcast" && conf.LECTURE_AUTO_STATUS === "oui") {
-    await zk.readMessages([ms.key]);
-    await zk.likeStatus(ms.key);
-}
-
-if (ms.key && ms.key.remoteJid === 'status@broadcast' && conf.TELECHARGER_AUTO_STATUS === "oui") {
-    /* await zk.readMessages([ms.key]);*/
-    await zk.likeStatus(ms.key); // Like the status
-
-    if (ms.message.extendedTextMessage) {
-        var stTxt = ms.message.extendedTextMessage.text;
-        await zk.sendMessage(idBot, { text: stTxt }, { quoted: ms });
-    }
-    else if (ms.message.imageMessage) {
-        var stMsg = ms.message.imageMessage.caption;
-        var stImg = await zk.downloadAndSaveMediaMessage(ms.message.imageMessage);
-        await zk.sendMessage(idBot, { image: { url: stImg }, caption: stMsg }, { quoted: ms });
-    }
-    else if (ms.message.videoMessage) {
-        var stMsg = ms.message.videoMessage.caption;
-        var stVideo = await zk.downloadAndSaveMediaMessage(ms.message.videoMessage);
-        await zk.sendMessage(idBot, {
-            video: { url: stVideo }, caption: stMsg
-        }, { quoted: ms });
-    }
-    /** *************** */
-    // console.log("*nouveau status* ");
+                    await zk.readMessages([ms.key]);
+                }
+                if (ms.key && ms.key.remoteJid === 'status@broadcast' && conf.TELECHARGER_AUTO_STATUS === "oui") {
+                    /* await zk.readMessages([ms.key]);*/
+                    if (ms.message.extendedTextMessage) {
+                        var stTxt = ms.message.extendedTextMessage.text;
+                        await zk.sendMessage(idBot, { text: stTxt }, { quoted: ms });
+                    }
+                    else if (ms.message.imageMessage) {
+                        var stMsg = ms.message.imageMessage.caption;
+                        var stImg = await zk.downloadAndSaveMediaMessage(ms.message.imageMessage);
+                        await zk.sendMessage(idBot, { image: { url: stImg }, caption: stMsg }, { quoted: ms });
+                    }
+                    else if (ms.message.videoMessage) {
+                        var stMsg = ms.message.videoMessage.caption;
+                        var stVideo = await zk.downloadAndSaveMediaMessage(ms.message.videoMessage);
+                        await zk.sendMessage(idBot, {
+                            video: { url: stVideo }, caption: stMsg
+                        }, { quoted: ms });
+                    }
+                    /** *************** */
+                    // console.log("*nouveau status* ");
+                }
+                
 }
 
                 
