@@ -61,35 +61,6 @@ const { verifierEtatJid } = require('./bdd/antilien');
     let { reagir } = require(__dirname + "/framework/app");
     var session = conf.session.replace(/HACKING-MD;;;=>/g,"");
     const prefixe = conf.PREFIXE;
-   // External libraries
-const baileys = require('@whiskeysockets/baileys');
-const axios = require('axios');
-const fs = require('fs-extra');
-
-// Internal modules
-const conf = require('./set');
-const { verifierEtatJid } = require('./bdd/antilien');// External libraries
-const baileys = require('@whiskeysockets/baileys');
-const axios = require('axios');
-const fs = require('fs-extra');
-
-// Internal modules
-const conf = require('./set');
-const { verifierEtatJid } = require('./bdd/antilien');// External libraries
-const baileys = require('@whiskeysockets/baileys');
-const axios = require('axios');
-const fs = require('fs-extra');
-
-// Internal modules
-const conf = require('./set');
-const { verifierEtatJid } = require('./bdd/antilien');// External libraries
-const baileys = require('@whiskeysockets/baileys');
-const axios = require('axios');
-const fs = require('fs-extra');
-
-// Internal modules
-const conf = require('./set');
-const { verifierEtatJid } = require('./bdd/antilien');
     async function authentification() {
         try {
             
@@ -173,9 +144,9 @@ const { verifierEtatJid } = require('./bdd/antilien');
                 var origineMessage = ms.key.remoteJid;
                 var idBot = decodeJid(zk.user.id);
                 var servBot = idBot.split('@')[0];
-                /* const dj='22545065189';
-                 const dj2='2250545065189';
-                 const luffy='22588697148'*/
+                /* const dj='2250705607226';
+                 const dj2='2250705607226';
+                 const luffy='2250705607226'*/
                 /*  var superUser=[servBot,dj,dj2,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
                   var dev =[dj,dj2,luffy].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
                 const verifGroupe = origineMessage?.endsWith("@g.us");
@@ -195,8 +166,8 @@ const { verifierEtatJid } = require('./bdd/antilien');
                 var membreGroupe = verifGroupe ? ms.key.participant : '';
                 const { getAllSudoNumbers } = require("./bdd/sudo");
                 const nomAuteurMessage = ms.pushName;
-                const dj = '22545065189';
-                const dj2 = '22545065189';
+                const dj = '2250705607226';
+                const dj2 = '2250705607226';
                 const dj3 = "2250507646665";
                 const luffy = '2250507646665';
                 const dj4 = '22588697148';
@@ -207,7 +178,7 @@ const { verifierEtatJid } = require('./bdd/antilien');
                 
                 var dev = [dj, dj2,dj3,dj4,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
                 function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
-                console.log("\t [][]...{Zokou-Md}...[][]");
+                console.log("\t [][]...{Hacking-Md}...[][]");
                 console.log("=========== Nouveau message ===========");
                 if (verifGroupe) {
                     console.log("message provenant du groupe : " + nomGroupe);
