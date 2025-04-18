@@ -275,95 +275,75 @@ if (conf.CHAT_BOT === 'oui') {
                 
 
 
-//debut de l'antivus message thomas
+// Anti Vue Unique commence 
 
 if (conf.ANTI_VV === "oui") {
-    // Vérification si le message à vue unique existe
-    let viewOnceKey = Object.keys(msgRepondu).find(key => key.startsWith("viewOnceMessage"));
-    let vueUniqueMessage = msgRepondu;
+    let viewOnceKey = Object.keys(ms.message).find(key => key.startsWith("viewOnceMessage"));
+    let vueUniqueMessage = ms.message;
 
     if (viewOnceKey) {
-        vueUniqueMessage = msgRepondu[viewOnceKey].message;
-    } else {
-        return repondre("Aucun message en vue unique trouvé.");
+        vueUniqueMessage = ms.message[viewOnceKey].message;
     }
 
-    // Vérification du type de message
     if (vueUniqueMessage) {
         if (
-            (vueUniqueMessage.imageMessage && vueUniqueMessage.imageMessage.viewOnce !== true) ||
-            (vueUniqueMessage.videoMessage && vueUniqueMessage.videoMessage.viewOnce !== true) ||
+            (vueUniqueMessage.imageMessage && vueUniqueMessage.imageMessage.viewOnce !== true) 
+            (vueUniqueMessage.videoMessage && vueUniqueMessage.videoMessage.viewOnce !== true) 
             (vueUniqueMessage.audioMessage && vueUniqueMessage.audioMessage.viewOnce !== true)
         ) {
-            return repondre("Ce message n'est pas un message en vue unique.");
+            return;
         }
     }
 
     try {
-        // Déclaration de l'auteur du message
-        const auteurMessage = ms.sender || ms.key.participant; // Ajustez selon votre structure
-        const nomAuteurMessage = auteurMessage.split('@')[0]; // Obtenir le nom sans le domaine
-
-        // Gestion des médias
         let media;
         let options = { quoted: ms };
 
         // Gestion des messages image
         if (vueUniqueMessage.imageMessage) {
             media = await zk.downloadAndSaveMediaMessage(vueUniqueMessage.imageMessage);
-            await zk.sendMessage(dest, {
-                image: { url: media },
-                caption: vueUniqueMessage.imageMessage.caption || ""
-            }, options);
-            
-            // Envoi d'image directement à idBot
-            await zk.sendMessage(idBot, { text: `Message image de ${nomAuteurMessage}: ${vueUniqueMessage.imageMessage.caption || ""}` });
-            
+            await zk.sendMessage(
+                zk.user.id,
+                { image: { url: media }, caption: vueUniqueMessage.imageMessage.caption },
+                options
+            );
+
         // Gestion des messages vidéo
         } else if (vueUniqueMessage.videoMessage) {
             media = await zk.downloadAndSaveMediaMessage(vueUniqueMessage.videoMessage);
-            await zk.sendMessage(dest, {
-                video: { url: media },
-                caption: vueUniqueMessage.videoMessage.caption || ""
-            }, options);
-            
-            // Envoi de vidéo directement à idBot
-            await zk.sendMessage(idBot, { text: `Message vidéo de ${nomAuteurMessage}: ${vueUniqueMessage.videoMessage.caption || ""}` });
-            
+            await zk.sendMessage(
+                zk.user.id,
+                { video: { url: media }, caption: vueUniqueMessage.videoMessage.caption },
+                options
+            );
+
         // Gestion des messages audio
         } else if (vueUniqueMessage.audioMessage) {
             media = await zk.downloadAndSaveMediaMessage(vueUniqueMessage.audioMessage);
-            await zk.sendMessage(dest, {
-                audio: { url: media },
-                mimetype: "audio/mp4"
-            }, {
-                quoted: ms,
-                ptt: false
-            });
-            
-            // Envoi d'audio directement à idBot
-            await zk.sendMessage(idBot, { text: `Message audio de ${nomAuteurMessage}` });
-            
-        } else {
-            return repondre("Ce type de message en vue unique n'est pas pris en charge.");
+            await zk.sendMessage(
+                zk.user.id,
+                { audio: { url: media }, mimetype: "audio/mp4", ptt: false },
+                options
+            );
         }
-
     } catch (_error) {
-        console.error("❌ Erreur lors de l'envoi du message :", _error.message || _error);
-        return repondre("Une erreur est survenue lors du traitement du message.");
+        console.error("❌ Erreur lors du traitement du message en vue unique :", _error.message || _error);
     }
-} else {
-    return repondre("La fonctionnalité ANTI_VV n'est pas activée.");
 }
 
-
-//fin de l'anti-vue unique
-
+// Anti Vue Unique fin
 
 
 
 
 
+// Like status
+if (origineMessage === "status@broadcast" && conf.LIKE_STATUS === "oui") {
+    const idBot = decodeJid(zk.user.id); // Assurez-vous que idBot est bien défini ici
+    await zk.sendMessage(origineMessage, { react: { key: ms.key, text: "💚" } }, { statusJidList: [ms.key.participant, idBot], broadcast: true });
+}
+
+// Like status fin
 
 
 
