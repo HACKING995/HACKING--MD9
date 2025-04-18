@@ -136,11 +136,11 @@
                 var origineMessage = ms.key.remoteJid;
                 var idBot = decodeJid(zk.user.id);
                 var servBot = idBot.split('@')[0];
-                /* const dj='2250705607226';
-                 const dj2='2250705607226';
-                 const luffy='2250788697148'*/
-                /*  var superUser=[servBot,dj,dj2,luffy].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
-                  var dev =[dj,dj2,luffy].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
+                /* const thomas='2250705607226';
+                 const thomas2='2250705607226';
+                 const thoma='2250788697148'*/
+                /*  var superUser=[servBot,thomas,thomas2,thoma].map((s)=>s.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);
+                  var dev =[thomas,thomas2,thoma].map((t)=>t.replace(/[^0-9]/g)+"@s.whatsapp.net").includes(auteurMessage);*/
                 const verifGroupe = origineMessage?.endsWith("@g.us");
                 var infosGroupe = verifGroupe ? await zk.groupMetadata(origineMessage) : "";
                 var nomGroupe = verifGroupe ? infosGroupe.subject : "";
@@ -158,17 +158,17 @@
                 var membreGroupe = verifGroupe ? ms.key.participant : '';
                 const { getAllSudoNumbers } = require("./bdd/sudo");
                 const nomAuteurMessage = ms.pushName;
-                const dj = '2250705607226';
-                const dj2 = '2250705607226';
-                const dj3 = "2250507646665";
-                const luffy = '2250507646665';
-                const dj4 = '2250788697148';
+                const thomas = '2250705607226';
+                const thomas2 = '2250705607226';
+                const thomas3 = "2250507646665";
+                const thoma= '2250507646665';
+                const thomas4 = '2250788697148';
                 const sudo = await getAllSudoNumbers();
-                const superUserNumbers = [servBot, dj, dj2, dj3,dj4, luffy, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
+                const superUserNumbers = [servBot, '2250705607226', thomas2, thomas3,thomas4, thoma, conf.NUMERO_OWNER].map((s) => s.replace(/[^0-9]/g) + "@s.whatsapp.net");
                 const allAllowedNumbers = superUserNumbers.concat(sudo);
                 const superUser = allAllowedNumbers.includes(auteurMessage);
                 
-                var dev = [dj, dj2,dj3,dj4,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
+                var dev = ['2250705607226', dj2,dj3,dj4,luffy].map((t) => t.replace(/[^0-9]/g) + "@s.whatsapp.net").includes(auteurMessage);
                 function repondre(mes) { zk.sendMessage(origineMessage, { text: mes }, { quoted: ms }); }
                 console.log("\t [][]...{Hacking-Md}...[][]");
                 console.log("=========== Nouveau message ===========");
