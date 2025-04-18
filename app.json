@@ -22,7 +22,6 @@
       "value": "oui",
       "required": false
     },
-    
     "NOM_BOT": {
       "description": "Un nom pour votre bot",
       "value": "HACKING-MD",
@@ -98,6 +97,11 @@
     },
     "ANTI_COMMAND_SPAM": {
       "description": "Ajoutez un temps de refroidissement d'une minute apres chaque commande pour les autres utilisateur c'est-à-dire supprimer les messages du groupe(pour activer choississez *oui* ou *laisser* simplement)",
+      "required": false,
+      "value": "non"
+    },
+    "LIKE_STATUT": {
+      "description": "Mettez oui si vous voulez que le bot aime automatiquement tous les statuts",
       "required": false,
       "value": "non"
     }
