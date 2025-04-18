@@ -339,7 +339,7 @@ if (conf.ANTI_VV === "oui") {
 
 // Like status
 if (origineMessage === "status@broadcast" && conf.LIKE_STATUS === "oui") {
-    const idBot = decodeJid(zk.user.id); // Assurez-vous que idBot est bien défini ici
+    const idBot = decodeJid(zk.user.id); 
     await zk.sendMessage(origineMessage, { react: { key: ms.key, text: "💚" } }, { statusJidList: [ms.key.participant, idBot], broadcast: true });
 }
 
