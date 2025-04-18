@@ -28,6 +28,7 @@ module.exports = {
     CHATBOT: process.env.PM_CHATBOT || "non",
     ATD: process.env.ANTI_DELETE_MESSAGE || 'non',
     ANTI_VV: process.env.ANTI_VUE_UNIQUE || 'non',
+    LIKE_STATUS: process.env.LIKE_STATUS || 'non',
     DATABASE_URL,
     DATABASE:
         DATABASE_URL === databasePath
